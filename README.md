@@ -1,2 +1,3 @@
-<img align="center" src="assets/images/whale_small_padded.png" />
+![Whale][whale]
 # Little Leviathan
+[whale]: assets/images/whale_small_padded.png
