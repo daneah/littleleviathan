@@ -51,6 +51,7 @@ TEMPLATE_DIRS = (
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
+    os.path.join(BASE_DIR, 'bower_components'),
 )
 
 ROOT_URLCONF = 'littleleviathan.urls'
