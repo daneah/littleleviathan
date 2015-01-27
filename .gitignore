@@ -56,3 +56,6 @@ target/
 
 # PyCharm
 .idea/
+
+# Bower
+bower_components/
