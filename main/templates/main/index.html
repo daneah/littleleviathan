@@ -1,3 +1,28 @@
 {% extends '__base.html' %}
+{% load staticfiles %}
 {% block content %}
+<div class="jumbotron">
+    <img id="header-whale" class="center-block" src="{% static 'images/whale.png' %}" alt="Little Leviathan Whale" />
+    <h1 class="text-center">Little Leviathan</h1>
+</div>
+<div class="row">
+    <div class="col-md-4 col-sm-12 col-md-offset-4">
+        <p class="lead text-center">Self-titled album coming in March!</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 col-sm-12 col-md-offset-4">
+        <p class="lead text-center">Please join the mailing list.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-xs-4 col-xs-offset-4">
+        <form>
+            <div class="form-group">
+                <input id="email-input" name="email" class="form-control" type="email" placeholder="Enter email" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Join</button>
+        </form>
+    </div>
+</div>
 {% endblock content %}
