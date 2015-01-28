@@ -63,3 +63,4 @@ bower_components/
 # SASS
 *.css
 *.css.map
+.sass-cache/
