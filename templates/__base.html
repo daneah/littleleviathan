@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load compress %}
 <!doctype html>
 <html>
     <head lang="en">
@@ -8,18 +9,22 @@
         <meta name="keywords" content="{% block page_keywords %}Ann Arbor, Michigan, Ann Arbor Michigan, folk, music, folk music, Ann Arbor musicians, Michigan musicians, independent musicians{% endblock %}" />
         <title>{% block title %}Little Leviathan{% endblock %}</title>
         <link rel="icon" href="{% block favicon %}{% static 'images/favicon.ico' %}{% endblock %}" />
+        {% compress css %}
         {% block css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}" />
         {% endblock css %}
+        {% endcompress %}
     </head>
     <body>
         <div class="container-fluid">
             {% block content %}
             {% endblock content %}
         </div>
+        {% compress js %}
         {% block js %}
         <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-        <script src="{% static 'bootstrap-sass/assets/javascripts/bootstrap.js' %}"></script>
+        <script src="{% static 'bootstrap-sass/assets/javascripts/bootstrap.min.js' %}"></script>
         {% endblock js %}
+        {% endcompress %}
     </body>
 </html>
