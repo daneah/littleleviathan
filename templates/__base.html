@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load compress %}
+{% with request.build_absolute_uri as absolute_uri %}
 <!doctype html>
 <html>
     <head lang="en">
@@ -7,6 +8,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="description" content="{% block page_description %}American folk singer/songwriter in Ann Arbor, Michigan{% endblock %}" />
         <meta name="keywords" content="{% block page_keywords %}Ann Arbor, Michigan, Ann Arbor Michigan, folk, music, folk music, Ann Arbor musicians, Michigan musicians, independent musicians{% endblock %}" />
+
+        <meta property="og:title" content="{% block og_title %}Little Leviathan{% endblock %}" />
+        <meta property="og:description" content="{% block og_description %}{% endblock %}" />
+        <meta property="og:url" content="{% block og_url %}{{ absolute_uri }}{% endblock %}" />
+        <meta property="og:site_name" content="{% block og_site_name %}Little Leviathan{% endblock %}" />
+        <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+        <meta property="og:image" content="{% block og_image %}{{ absolute_uri }}{% static 'images/whale.png' %}{% endblock %}" />
+        <meta property="og:image:type" content="{% block og_image_type %}image/png{% endblock %}" />
+        <meta property="og:image:height" content="{% block og_image_height %}341{% endblock %}" />
+        <meta property="og:image:width" content="{% block og_image_width %}800{% endblock %}" />
+
+        <meta name="twitter:card" content="{% block twitter_card %}{% endblock %}" />
+        <meta name="twitter:url" content="{% block twitter_url %}{{ absolute_uri }}{% endblock %}" />
+        <meta name="twitter:site" content="{% block twitter_site %}@littleleviathan{% endblock %}" />
+        <meta name="twitter:creator" content="{% block twitter_creator %}@danehillard{% endblock %}" />
+        <meta name="twitter:title" content="{% block twitter_title %}Little Leviathan{% endblock %}" />
+        <meta name="twitter:description" content="{% block twitter_description %}{% endblock %}" />
+        <meta name="twitter:image:src" content="{% block twitter_image_src %}{{ absolute_uri }}{% static 'images/whale.png' %}{% endblock %}" />
+
         <title>{% block title %}Little Leviathan{% endblock %}</title>
         <link rel="icon" href="{% block favicon %}{% static 'images/favicon.ico' %}{% endblock %}" />
         {% compress css %}
@@ -28,3 +48,4 @@
         {% endcompress %}
     </body>
 </html>
+{% endwith %}
