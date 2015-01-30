@@ -16,10 +16,8 @@
         {% endcompress %}
     </head>
     <body>
-        <div class="container-fluid">
-            {% block content %}
-            {% endblock content %}
-        </div>
+        {% block content %}
+        {% endblock content %}
         {% compress js %}
         {% block js %}
         <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
