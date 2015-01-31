@@ -1,5 +1,11 @@
 {% extends '__base.html' %}
 {% load staticfiles %}
+
+{% block og_description %}Dane Hillard is a Michigan singer/songwriter writing American folk music as Little Leviathan{% endblock %}
+
+{% block twitter_card %}summary_large_image{% endblock %}
+{% block twitter_description %}Dane Hillard is a Michigan singer/songwriter writing American folk music as Little Leviathan{% endblock %}
+
 {% block content %}
 <img id="header-whale" class="center-block img-responsive" src="{% static 'images/whale.png' %}" alt="Little Leviathan Whale" />
 <h1 class="text-center">Little Leviathan</h1>
