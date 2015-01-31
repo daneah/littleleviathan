@@ -12,6 +12,10 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = os.getenv(PROJECT_VARIABLE_PATTERN.format('ALLOWED_HOSTS'), '*').split(',')
 
+ADMINS = (
+    ('Dane', 'github@danehillard.com'),
+)
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
