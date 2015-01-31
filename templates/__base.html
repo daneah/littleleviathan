@@ -1,6 +1,6 @@
 {% load staticfiles %}
 {% load compress %}
-{% with request.scheme|add:'://'|add:request.META.HTTP_HOST as base_uri %}
+{% with request.build_absolute_uri as base_uri %}
 <!doctype html>
 <html>
     <head lang="en">
