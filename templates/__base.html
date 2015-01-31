@@ -33,9 +33,11 @@
         <title>{% block title %}Little Leviathan{% endblock %}</title>
         <link rel="icon" href="{% block favicon %}{% static 'images/favicon.ico' %}{% endblock %}" />
         {% compress css %}
-        {% block css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}" />
+        <style>
+        {% block css %}
         {% endblock css %}
+        </style>
         {% endcompress %}
     </head>
 

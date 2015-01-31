@@ -48,7 +48,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'context_processors.template_visible_settings',
 )
 
+SOCIAL_MEDIA = {
+    'facebook': 'http://www.facebook.com/littleleviathanmusic',
+    'instagram': 'http://www.instagram.com/littleleviathanmusic',
+    'twitter': 'http://www.twitter.com/littleleviathan',
+}
+
 TEMPLATE_VISIBLE_SETTINGS = (
+    'SOCIAL_MEDIA',
 )
 
 TEMPLATE_DIRS = (

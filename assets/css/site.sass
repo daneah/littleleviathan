@@ -1,10 +1,26 @@
 @import ../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables
 $body-bg: #CFE0F2
 $jumbotron-bg: $body-bg
-$over-bg: lighten($body-bg, 10)
+$over-bg: lighten($body-bg, 8)
+$section-heading: lighten($body-bg, 8)
 
 @import ../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap
 
 #header-whale
   max-width: 40%
   margin: 25px auto
+
+.overlay
+  padding: 50px 5px
+  background: $over-bg
+
+.section-heading
+
+  h1
+    color: $section-heading
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35)
+    margin: 100px auto
+    letter-spacing: 3px
+
+.push
+  height: 100px
