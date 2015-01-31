@@ -43,8 +43,9 @@
         {% endblock content %}
         {% compress js %}
         {% block js %}
-        <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-        <script src="{% static 'bootstrap-sass/assets/javascripts/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'bootstrap-sass/assets/javascripts/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/analytics.js' %}"></script>
         {% endblock js %}
         {% endcompress %}
     </body>
