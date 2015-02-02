@@ -1,0 +1,6 @@
+{% extends '__base.html' %}
+{% block content %}
+<img width="150" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" />
+<h1>{{ album.title }}</h1>
+<p>{{ album.synopsis }}</p>
+{% endblock content %}

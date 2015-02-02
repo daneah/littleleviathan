@@ -1,0 +1,18 @@
+{% extends '__base.html' %}
+{% block content %}
+{% for album in album_list %}
+<div class="container-fluid">
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="{{ album.cover_art.url }}" width="150" alt="{{ album.title }} cover art" />
+            </a>
+        </div>
+        <div class="media-body">
+            <a href="{% url 'main:album' album_code=album.code %}"><h4 class="media-heading">{{ album.title }}</h4></a>
+            <p>{{ album.synopsis }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
