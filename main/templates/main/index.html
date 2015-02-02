@@ -16,6 +16,10 @@
     background: url("{% static 'images/jellyfish.jpg' %}") no-repeat center center fixed;
     background-size: cover;
 }
+#water {
+    background: url("{% static 'images/water.jpg' %}") no-repeat center center fixed;
+    background-size: cover;
+}
 {% endblock css %}
 
 {% block content %}
@@ -80,6 +84,20 @@
     </div>
 </div>
 <div id="jellyfish" class="container-fluid section-heading">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1 class="text-center text-uppercase">Music</h1>
+        </div>
+    </div>
+</div>
+<div class="container-fluid section">
+    <div class="row overlay">
+        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 ">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/134138862&amp;color=cfe0f2&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        </div>
+    </div>
+</div>
+<div id="water" class="container-fluid section-heading">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h1 class="text-center text-uppercase">Social Media</h1>
