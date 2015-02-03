@@ -20,13 +20,13 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='song',
             name='art_height',
-            field=models.IntegerField(default=''),
+            field=models.IntegerField(default=0),
             preserve_default=False,
         ),
         migrations.AlterField(
             model_name='song',
             name='art_width',
-            field=models.IntegerField(default=''),
+            field=models.IntegerField(default=0),
             preserve_default=False,
         ),
     ]
