@@ -13,5 +13,8 @@ class AlbumAdmin(admin.ModelAdmin):
 class SongAdmin(admin.ModelAdmin):
     model = Song
 
+    exclude = ('art_height', 'art_width')
+    prepopulated_fields = {'code': ('title',)}
+
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Song, SongAdmin)

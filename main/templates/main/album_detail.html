@@ -1,6 +1,27 @@
 {% extends '__base.html' %}
 {% block content %}
-<img width="150" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" />
-<h1>{{ album.title }}</h1>
-<p>{{ album.synopsis }}</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="nopadding col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <img class="img-responsive" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            <h1>{{ album.title }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            {{ album.synopsis|linebreaks }}
+        </div>
+    </div>
+    {% for song in album.song_set.all %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            <a href="{% url 'main:song' album.code song.code %}">{{ song.title }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock content %}

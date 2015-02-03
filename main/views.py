@@ -17,9 +17,7 @@ class AlbumDetailView(DetailView):
     slug_url_kwarg = 'album_code'
 
 
-class SongListView(ListView):
-    model = Song
-
-
 class SongDetailView(DetailView):
     model = Song
+    slug_field = 'code'
+    slug_url_kwarg = 'song_code'

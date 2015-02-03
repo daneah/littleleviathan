@@ -2,15 +2,24 @@
 {% block content %}
 {% for album in album_list %}
 <div class="container-fluid">
-    <div class="media">
-        <div class="media-left">
-            <a href="#">
-                <img class="media-object" src="{{ album.cover_art.url }}" width="150" alt="{{ album.title }} cover art" />
-            </a>
+    <div class="row">
+        <div class="text-center">
+            <h1>Albums</h1>
         </div>
-        <div class="media-body">
-            <a href="{% url 'main:album' album_code=album.code %}"><h4 class="media-heading">{{ album.title }}</h4></a>
-            <p>{{ album.synopsis }}</p>
+    </div>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+            <div class="media">
+                <div class="media-left text-center">
+                    <a href="{% url 'main:album' album.code %}"><h2 class="media-heading">{{ album.title }}</h2></a>
+                    <a href="{% url 'main:album' album.code %}">
+                        <img class="media-object img-responsive" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    {{ album.synopsis|linebreaks }}
+                </div>
+            </div>
         </div>
     </div>
 </div>
