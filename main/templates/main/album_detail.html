@@ -1,0 +1,40 @@
+{% extends '__base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="nopadding col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <img class="img-responsive" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            <h1>{{ album.title }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            {{ album.synopsis|linebreaks }}
+        </div>
+    </div>
+    {% if album.song_set.all %}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <table class="table table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                </tr>
+            {% for song in album.song_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>
+                        <a href="{% url 'main:song' album.code song.code %}">{{ song.title }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
