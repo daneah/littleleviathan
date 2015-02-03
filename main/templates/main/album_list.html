@@ -4,6 +4,7 @@
     <h1>Albums</h1>
 </div>
 <div class="container-fluid">
+{% if album_list %}
 {% for album in album_list %}
     <div class="row">
         <div class="nopadding col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
@@ -13,5 +14,14 @@
         </div>
     </div>
 {% endfor %}
+{% else %}
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+            <p class="lead text-center">
+                There are currently no albums available. Come back later!
+            </p>
+        </div>
+    </div>
+{% endif %}
 </div>
 {% endblock content %}

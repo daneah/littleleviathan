@@ -16,12 +16,25 @@
             {{ album.synopsis|linebreaks }}
         </div>
     </div>
-    {% for song in album.song_set.all %}
+    {% if album.song_set.all %}
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-            <a href="{% url 'main:song' album.code song.code %}">{{ song.title }}</a>
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <table class="table table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                </tr>
+            {% for song in album.song_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>
+                        <a href="{% url 'main:song' album.code song.code %}">{{ song.title }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
         </div>
     </div>
-    {% endfor %}
+    {% endif %}
 </div>
 {% endblock content %}
