@@ -23,23 +23,23 @@
 {% endblock css %}
 
 {% block content %}
-<img id="header-whale" class="center-block img-responsive" src="{% static 'images/whale.png' %}" alt="Little Leviathan Whale" />
-<h1 class="text-center">Little Leviathan</h1>
 <div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+            <img id="header-whale" class="center-block img-responsive" src="{% static 'images/whale.png' %}" alt="Little Leviathan Whale" />
+            <h1 class="text-center">Little Leviathan</h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-4 col-sm-12 col-md-offset-4">
             <p class="lead text-center">Self-titled album coming in March!</p>
         </div>
     </div>
-</div>
-<div class="container-fluid">
     <div class="row">
         <div class="col-md-4 col-sm-12 col-md-offset-4">
             <p class="lead text-center">Please join the mailing list.</p>
         </div>
     </div>
-</div>
-<div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 col-lg-offset-5 col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
             <form role="form" action="//danehillard.us3.list-manage.com/subscribe/post?u=7b074cb21df3367b6d1c4f049&amp;id=5cf7e1138b" method="post">
@@ -70,8 +70,8 @@
         </div>
     </div>
 </div>
-<div class="container-fluid section">
-    <div class="row overlay">
+<div class="container-fluid section overlay">
+    <div class="row">
         <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
             <p class="lead text-justify">
                 Little Leviathan is the stage name and debut album title for singer/songwriter Dane Hillard.
@@ -90,10 +90,15 @@
         </div>
     </div>
 </div>
-<div class="container-fluid section">
-    <div class="row overlay">
-        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
+<div class="container-fluid section overlay">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 text-center">
             <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/134138862&amp;color=cfe0f2&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 text-center">
+            <a class="btn btn-primary" href="{% url 'main:albums' %}">See All Albums</a>
         </div>
     </div>
 </div>
@@ -104,8 +109,8 @@
         </div>
     </div>
 </div>
-<div class="container-fluid section">
-    <div class="row overlay">
+<div class="container-fluid section overlay">
+    <div class="row">
         <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 text-center">
             <ul class="list-inline">
                 <li><a class="lead" href="{{ SOCIAL_MEDIA.facebook }}" title="Facebook" target="_blank">Facebook</a></li>
