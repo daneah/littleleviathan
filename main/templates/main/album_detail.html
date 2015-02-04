@@ -25,7 +25,7 @@
                     <th>Title</th>
                 </tr>
             {% for song in album.song_set.all %}
-                <tr itemscope itemtype="http://www.schema.org/MusicRecording">
+                <tr itemprop="track" itemscope itemtype="http://www.schema.org/MusicRecording">
                     <td>{{ forloop.counter }}</td>
                     <td>
                         <a href="{% url 'main:song' album.code song.code %}" itemprop="url">
