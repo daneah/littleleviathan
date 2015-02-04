@@ -5,7 +5,11 @@ from django import template
 register = template.Library()
 
 @register.filter
-def seconds_to_mm_ss(seconds):
-    minutes = floor(seconds / 60)
+def minutes_part(seconds):
+    return floor(seconds / 60)
+
+@register.filter
+def seconds_part(seconds):
+    minutes = minutes_part(seconds)
     seconds = floor(seconds - (minutes * 60))
-    return '%d:%02d' % (minutes, seconds)
+    return '%02d' % seconds

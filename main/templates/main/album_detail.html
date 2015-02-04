@@ -34,7 +34,10 @@
                             <span itemprop="name">{{ song.title }}</span>
                         </a>
                     </td>
-                    <td itemprop="duration">{{ song.duration_seconds|seconds_to_mm_ss }}</td>
+                    <td>
+                        <meta itemprop="duration" content="PT{{ song.duration_seconds|minutes_part }}M{{ song.duration_seconds|seconds_part }}S" />
+                        {{ song.duration_seconds|minutes_part }}:{{ song.duration_seconds|seconds_part }}
+                    </td>
                 </tr>
             {% endfor %}
             </table>
