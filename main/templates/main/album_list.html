@@ -1,15 +1,17 @@
 {% extends '__base.html' %}
 {% block content %}
-<div class="jumbotron text-center">
+<div class="text-center">
     <h1>Albums</h1>
 </div>
 <div class="container-fluid">
 {% if album_list %}
 {% for album in album_list %}
     <div class="row">
-        <div class="nopadding col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-            <a href="{% url 'main:album' album.code %}" title="{{ album.title }}">
-                <img class="img-responsive" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" />
+        <div class="nopadding col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" itemtype="http://schema.org/MusicAlbum">
+            <a href="{% url 'main:album' album.code %}" title="{{ album.title }}" itemprop="url">
+                <h2 class="text-center" itemprop="name">{{ album.title }}</h2>
+                <h3 class="text-center text-mute" itemprop="numTracks">{{ album.song_set.all.count }} track{{ album.song_set.all.count|pluralize }}</h3>
+                <img class="img-responsive" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" itemprop="image" />
             </a>
         </div>
     </div>
