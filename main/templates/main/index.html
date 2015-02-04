@@ -23,11 +23,11 @@
 {% endblock css %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicGroup">
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
-            <img id="header-whale" class="center-block img-responsive" src="{% static 'images/whale.png' %}" alt="Little Leviathan Whale" />
-            <h1 class="text-center">Little Leviathan</h1>
+            <img id="header-whale" class="center-block img-responsive" src="{% static 'images/whale.png' %}" alt="Little Leviathan Whale" itemprop="image"/>
+            <h1 class="text-center" itemprop="name">Little Leviathan</h1>
         </div>
     </div>
     <div class="row">
@@ -73,7 +73,7 @@
 <div class="container-fluid section overlay">
     <div class="row">
         <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
-            <p class="lead text-justify">
+            <p class="lead text-justify" itemprop="description">
                 Little Leviathan is the stage name and debut album title for singer/songwriter Dane Hillard.
                 Dane grew up in northern Michigan and is inspired in part by the beautiful nature of those surroundings.
                 The work in <em>Little Leviathan</em> is comprised of material written over the last seven years,
@@ -113,9 +113,9 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 text-center">
             <ul class="list-inline">
-                <li><a class="lead" href="{{ SOCIAL_MEDIA.facebook }}" title="Facebook" target="_blank">Facebook</a></li>
-                <li><a class="lead" href="{{ SOCIAL_MEDIA.twitter }}" title="Twitter" target="_blank">Twitter</a></li>
-                <li><a class="lead" href="{{ SOCIAL_MEDIA.instagram }}" title="Facebook" target="_blank">Instagram</a></li>
+                <li><a class="lead" href="{{ SOCIAL_MEDIA.facebook }}" title="Facebook" target="_blank" itemprop="sameAs">Facebook</a></li>
+                <li><a class="lead" href="{{ SOCIAL_MEDIA.twitter }}" title="Twitter" target="_blank" itemprop="sameAs">Twitter</a></li>
+                <li><a class="lead" href="{{ SOCIAL_MEDIA.instagram }}" title="Facebook" target="_blank" itemprop="sameAs">Instagram</a></li>
             </ul>
         </div>
     </div>
