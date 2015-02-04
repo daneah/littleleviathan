@@ -1,4 +1,22 @@
 {% extends '__base.html' %}
+
+{% block page_description %}{{ song.title }}: a track from the album {{ song.album.title }} by Little Leviathan{% endblock %}
+{% block page_keywords %}{{ block.super }}, albums, records, music albums, folk albums, folk records, {{ song.title }}{% endblock %}
+
+{% block og_title %}{{ song.title }} | {{ block.super }}{% endblock %}
+{% block og_description %}{{ song.title }}: a track from the album {{ song.album.title }} by Little Leviathan{% endblock %}
+{% block og_image %}{{ base_uri }}{{ song.art.url }}{% endblock %}
+{% block og_image_height %}{{ song.art_height }}{% endblock %}
+{% block og_image_width %}{{ song.art_width }}{% endblock %}
+
+{% block twitter_title %}{{ song.title }} | {{ block.super }}{% endblock %}
+{% block twitter_image_src %}{{ base_uri }}{{ song.art.url }}{% endblock %}
+{% block twitter_image_height %}{{ song.art_height }}{% endblock %}
+{% block twitter_image_width %}{{ song.art_width }}{% endblock %}
+{% block twitter_description %}{{ song.title }}: a track from the album {{ song.album.title }} by Little Leviathan{% endblock %}
+
+{% block title %}{{ song.title }} | {{ block.super }}{% endblock %}
+
 {% block content %}
 <div class="container-fluid">
     <div class="row">

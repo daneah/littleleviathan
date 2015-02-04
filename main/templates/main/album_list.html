@@ -1,4 +1,16 @@
 {% extends '__base.html' %}
+
+{% block page_description %}Albums recorded by Little Leviathan{% endblock %}
+{% block page_keywords %}{{ block.super }}, albums, records, music albums, folk albums, folk records{% endblock %}
+
+{% block og_title %}Albums | {{ block.super }}{% endblock %}
+{% block og_description %}Albums recorded by Little Leviathan{% endblock %}
+
+{% block twitter_title %}Albums | {{ block.super }}{% endblock %}
+{% block twitter_description %}Albums recorded by Little Leviathan{% endblock %}
+
+{% block title %}Albums | {{ block.super }}{% endblock %}
+
 {% block content %}
 <div class="text-center">
     <h1>Albums</h1>
@@ -7,7 +19,7 @@
 {% if album_list %}
 {% for album in album_list %}
     <div class="row">
-        <div class="nopadding col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" itemscope itemtype="http://schema.org/MusicAlbum">
+        <div class="nopadding col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" itemscope itemtype="http://www.schema.org/MusicAlbum">
             <a href="{% url 'main:album' album.code %}" title="{{ album.title }}" itemprop="url">
                 <h2 class="text-center" itemprop="name">{{ album.title }}</h2>
                 <h3 class="text-center"><span itemprop="numTracks">{{ album.song_set.all.count }}</span> track{{ album.song_set.all.count|pluralize }}</h3>
