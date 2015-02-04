@@ -22,6 +22,7 @@ class Song(models.Model):
     art_height = models.IntegerField()
     art_width = models.IntegerField()
     art = models.ImageField(upload_to='song_art', height_field='art_height', width_field='art_width')
+    duration_seconds = models.IntegerField()
 
     class Meta:
         ordering = ['index']
