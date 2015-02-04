@@ -19,8 +19,8 @@ class SongAdmin(admin.ModelAdmin):
     exclude = ('art_height', 'art_width')
     prepopulated_fields = {'code': ('title',)}
 
-    list_display = ('pk', 'title', 'code', 'album', 'index',)
-    list_editable = ('title', 'code', 'album', 'index',)
+    list_display = ('pk', 'title', 'code', 'album', 'index', 'duration_seconds',)
+    list_editable = ('title', 'code', 'album', 'index', 'duration_seconds')
 
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Song, SongAdmin)
