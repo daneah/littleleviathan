@@ -1,4 +1,5 @@
 {% extends '__base.html' %}
+{% load seconds_to_mm_ss %}
 {% block content %}
 <div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicAlbum">
     <div class="row">
@@ -23,6 +24,7 @@
                 <tr>
                     <th>#</th>
                     <th>Title</th>
+                    <th>Duration</th>
                 </tr>
             {% for song in album.song_set.all %}
                 <tr itemprop="track" itemscope itemtype="http://www.schema.org/MusicRecording">
@@ -32,6 +34,7 @@
                             <span itemprop="name">{{ song.title }}</span>
                         </a>
                     </td>
+                    <td itemprop="duration">{{ song.duration_seconds|seconds_to_mm_ss }}</td>
                 </tr>
             {% endfor %}
             </table>
