@@ -106,5 +106,3 @@ COMPRESS_CSS_FILTERS = (
 COMPRESS_PRECOMPILERS = (
     ('text/x-sass', 'sass {infile} {outfile}'),
 )
-
-COMPRESS_ENABLED = True
