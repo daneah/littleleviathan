@@ -1,0 +1,16 @@
+{% extends '__base.html' %}
+{% block title %}{% block error_page_title %}{% endblock %} | {{ block.super }}{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="jumbotron text-center">
+            <h1 class="text-uppercase">{% block error_heading %}{% endblock %}</h1>
+            <p class="lead">{% block error_message %}{% endblock %}</p>
+            <a href="{% block error_redirect_target %}{% url 'main:home' %}{% endblock %}" class="btn btn-primary">
+                {% block error_redirect_text %}{% endblock %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block disqus %}{% endblock %}
