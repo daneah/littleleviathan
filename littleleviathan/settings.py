@@ -54,6 +54,7 @@ SOCIAL_MEDIA = {
     'facebook': 'http://www.facebook.com/littleleviathanmusic',
     'instagram': 'http://www.instagram.com/littleleviathanmusic',
     'twitter': 'http://www.twitter.com/littleleviathan',
+    'google_plus': 'http://www.google.com/+LittleLeviathan',
 }
 
 TEMPLATE_VISIBLE_SETTINGS = (
