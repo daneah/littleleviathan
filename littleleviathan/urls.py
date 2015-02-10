@@ -21,8 +21,11 @@ urlpatterns = patterns(
 
 if settings.DEBUG:
     urlpatterns += patterns(
+        '',
+        url(r'^400/$', TemplateView.as_view(template_name='400.html'), name='bad_request'),
+        url(r'^403/$', TemplateView.as_view(template_name='403.html'), name='permission_denied'),
         url(r'^404/$', TemplateView.as_view(template_name='404.html'), name='not_found'),
-        url(r'^500/$', TemplateView.as_view(template_name='500.html'), name='server_error')
+        url(r'^500/$', TemplateView.as_view(template_name='500.html'), name='server_error'),
     )
 
 urlpatterns += staticfiles_urlpatterns()
