@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.views.generic import TemplateView, ListView, DetailView
 
 from main.models import Album, Song
@@ -9,7 +10,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         try:
-            context['featured_album'] = Album.objects.get(title='Little Leviathan')
+            context['featured_album'] = Album.objects.get(title=settings.FEATURED_ALBUM)
         except Album.DoesNotExist:
             pass
         return context
