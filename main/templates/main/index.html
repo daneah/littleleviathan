@@ -36,6 +36,9 @@
     <div class="row">
         <div class="col-md-4 col-sm-12 col-md-offset-4">
             <p class="lead text-center"><em>Little Leviathan</em> will be on pre-sale starting April 3rd and widely available May 1st!</p>
+            {% if featured_album and featured_album.itunes_link %}
+            <div class="text-center"><a href="{{ featured_album.itunes_link }}">{% include 'itunes.svg' %}</a></div>
+            {% endif %}
         </div>
     </div>
     <div class="row">

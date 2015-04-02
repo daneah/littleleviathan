@@ -9,6 +9,7 @@ class Album(models.Model):
     cover_art_height = models.IntegerField()
     cover_art_width = models.IntegerField()
     cover_art = models.ImageField(upload_to='cover_art', height_field='cover_art_height', width_field='cover_art_width')
+    itunes_link = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -26,6 +27,7 @@ class Song(models.Model):
     art_width = models.IntegerField()
     art = models.ImageField(upload_to='song_art', height_field='art_height', width_field='art_width')
     duration_seconds = models.IntegerField()
+    itunes_link = models.URLField(blank=True, null=True)
 
     class Meta:
         ordering = ['index']
