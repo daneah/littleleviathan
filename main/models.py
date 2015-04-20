@@ -28,6 +28,8 @@ class Song(models.Model):
     art = models.ImageField(upload_to='song_art', height_field='art_height', width_field='art_width')
     duration_seconds = models.IntegerField()
     itunes_link = models.URLField(blank=True, null=True)
+    soundcloud_link = models.URLField(blank=True, null=True)
+    bandcamp_link = models.URLField(blank=True, null=True)
 
     class Meta:
         ordering = ['index']
