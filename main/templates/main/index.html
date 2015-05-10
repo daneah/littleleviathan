@@ -1,135 +1,22 @@
 {% extends '__base.html' %}
 {% load staticfiles %}
 
-{% block og_description %}Dane Hillard is a Michigan singer/songwriter writing American folk music as Little Leviathan{% endblock %}
+{% block og_description %}Little Leviathan | News, tour, info, music, photos, videos, and more.{% endblock %}
 
 {% block twitter_description %}Dane Hillard is a Michigan singer/songwriter writing American folk music as Little Leviathan{% endblock %}
 
-{% block css %}
-{{ block.super }}
-#koi {
-    background: url("{% static 'images/koi_pond.jpg' %}") no-repeat center center fixed;
-    background-size: cover;
-}
-#jellyfish {
-    background: url("{% static 'images/jellyfish.jpg' %}") no-repeat center center fixed;
-    background-size: cover;
-}
-#water {
-    background: url("{% static 'images/water.jpg' %}") no-repeat center center fixed;
-    background-size: cover;
-}
-#storm {
-    background: url("{% static 'images/storm.jpg' %}") no-repeat center center fixed;
-    background-size: cover;
-}
-{% endblock css %}
-
 {% block content %}
 <div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicGroup">
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
-            <img id="header-whale" class="center-block img-responsive" src="{% static 'images/whale.png' %}" alt="Little Leviathan Whale" itemprop="image"/>
-            <h1 class="text-center" itemprop="name">Little Leviathan</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-sm-12 col-md-offset-4">
-            <p class="lead text-center"><em>Little Leviathan</em> is now available! Search for it on your favorite streaming service.</p>
-            {% if featured_album and featured_album.itunes_link %}
-            <div class="text-center"><a class="itunes-link" href="{{ featured_album.itunes_link }}">{% include 'itunes.svg' %}</a></div>
-            {% endif %}
+    <div class="top-buffer row">
+        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
             <div class="text-center">
-            {% include 'spotify.html' %}
+                <a href="{% url 'main:album' featured_album.code %}">
+                    <img class="img-responsive" src="{{ featured_album.cover_art.url }}" alt="Cover art for {{ featured_album.title }} by Little Leviathan" />
+                </a>
             </div>
-        </div>
-    </div>
-</div>
-<div class="push"></div>
-<div id="koi" class="container-fluid section-heading">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h1 class="text-center text-uppercase">About</h1>
-        </div>
-    </div>
-</div>
-<div class="container-fluid section overlay">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
-            <p class="lead text-justify" itemprop="description">
-                Little Leviathan is the stage name and debut album title for singer/songwriter Dane Hillard.
-                Dane grew up in northern Michigan and is inspired in part by the beautiful nature of those surroundings.
-                The work in <em>Little Leviathan</em> is comprised of material written over the last seven years,
-                and as a result of organic inspiration each song is true and untouched by the stresses of imminent release.
-                The text explores ideas along the spectrum of love and loss, drawing from personal experience and observation.
-            </p>
-        </div>
-    </div>
-</div>
-<div id="jellyfish" class="container-fluid section-heading">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h1 class="text-center text-uppercase">Music</h1>
-        </div>
-    </div>
-</div>
-<div class="container-fluid section overlay">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 text-center">
-            <a name="listen">
-                <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/200962787&amp;color=337ab7&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 text-center">
-            <a class="btn btn-primary" href="{% url 'main:album' 'little-leviathan' %}">Full Album</a>
-        </div>
-    </div>
-</div>
-<div id="water" class="container-fluid section-heading">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h1 class="text-center text-uppercase">Social Media</h1>
-        </div>
-    </div>
-</div>
-<div class="container-fluid section overlay">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2 text-center">
-            <ul class="list-inline">
-                <li><a class="lead" href="{{ SOCIAL_MEDIA.facebook }}" title="Facebook" target="_blank" itemprop="sameAs">Facebook</a></li>
-                <li><a class="lead" href="{{ SOCIAL_MEDIA.twitter }}" title="Twitter" target="_blank" itemprop="sameAs">Twitter</a></li>
-                <li><a class="lead" href="{{ SOCIAL_MEDIA.instagram }}" title="Instagram" target="_blank" itemprop="sameAs">Instagram</a></li>
-                <li><a class="lead" href="{{ SOCIAL_MEDIA.google_plus }}" title="Google+" target="_blank" itemprop="sameAs">Google+</a></li>
-                <li><a class="lead" href="{{ SOCIAL_MEDIA.last_fm }}" title="last.fm" target="_blank" itemprop="sameAs">last.fm</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div id="storm" class="container-fluid section-heading">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h1 class="text-center text-uppercase">Thanks</h1>
-        </div>
-    </div>
-</div>
-<div class="container-fluid section overlay">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
-            <p class="lead text-justify">
-                The watercolor artwork seen on this and other pages throughout the site was done by
-                <a href="https://www.facebook.com/pages/Katie-Eberts-Illustration/521039721271262">Katie Eberts</a>.
-                All songs except "Roots" were recorded and mixed at Holy Wah Studios.
-                All songs were mastered with the help of Patrick Niemisto and students at Northwestern Michigan University.
-                "Roots" was recorded by and with Mark Swanson of <a href="http://www.origamiincident.com">Origami Incident</a>.
-            </p>
         </div>
     </div>
 </div>
 {% endblock content %}
 
-{% block js %}
-{{ block.super }}
-<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
-{% endblock %}
+{% block disqus %}{% endblock %}

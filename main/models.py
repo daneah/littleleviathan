@@ -10,12 +10,16 @@ class Album(models.Model):
     cover_art_width = models.IntegerField()
     cover_art = models.ImageField(upload_to='cover_art', height_field='cover_art_height', width_field='cover_art_width')
     itunes_link = models.URLField(blank=True, null=True)
+    soundcloud_link = models.URLField(blank=True, null=True)
+    bandcamp_link = models.URLField(blank=True, null=True)
+    spotify_link = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('main:album', args=[self.code])
+
 
 class Song(models.Model):
     title = models.CharField(max_length=255)
@@ -30,6 +34,7 @@ class Song(models.Model):
     itunes_link = models.URLField(blank=True, null=True)
     soundcloud_link = models.URLField(blank=True, null=True)
     bandcamp_link = models.URLField(blank=True, null=True)
+    spotify_link = models.URLField(blank=True, null=True)
 
     class Meta:
         ordering = ['index']

@@ -27,14 +27,15 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
             <h1>{{ song.title }}</h1>
-            <div class="buy-links">
+            <div class="buy-links btn-group">
                 {% if song.itunes_link %}<a class="btn btn-large btn-primary" href="{{ song.itunes_link }}" target="_blank">iTunes</a>{% endif %}
                 {% if song.soundcloud_link %}<a class="btn btn-large btn-primary" href="{{ song.soundcloud_link }}" target="_blank">SoundCloud</a>{% endif %}
                 {% if song.bandcamp_link %}<a class="btn btn-large btn-primary" href="{{ song.bandcamp_link }}" target="_blank">Bandcamp</a>{% endif %}
+                {% if song.spotify_link %}<a class="btn btn-large btn-primary" href="{{ song.spotify_link }}" target="_blank">Spotify</a>{% endif %}
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row top-buffer">
         <div class="col-sm-6 col-sm-offset-3 text-center">
             {{ song.lyrics|linebreaks }}
         </div>
