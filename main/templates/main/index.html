@@ -13,6 +13,7 @@
                 <a href="{% url 'main:album' featured_album.code %}">
                     <img class="img-responsive" src="{{ featured_album.cover_art.url }}" alt="Cover art for {{ featured_album.title }} by Little Leviathan" />
                 </a>
+                {% include 'spotify.html' with show_spotify_follower_count=0 %}
             </div>
         </div>
     </div>
