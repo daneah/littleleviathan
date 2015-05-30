@@ -25,18 +25,23 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-            <h1><span itemprop="name">{{ song.title }}</span> by <span itemprop="byArtist">Little Leviathan</span></h1>
-            <div class="buy-links btn-group">
-                {% if song.itunes_link %}<a class="btn btn-large btn-primary" href="{{ song.itunes_link }}" target="_blank">iTunes</a>{% endif %}
-                {% if song.soundcloud_link %}<a class="btn btn-large btn-primary" href="{{ song.soundcloud_link }}" target="_blank">SoundCloud</a>{% endif %}
-                {% if song.bandcamp_link %}<a class="btn btn-large btn-primary" href="{{ song.bandcamp_link }}" target="_blank">Bandcamp</a>{% endif %}
-                {% if song.spotify_link %}<a class="btn btn-large btn-primary" href="{{ song.spotify_link }}" target="_blank">Spotify</a>{% endif %}
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <h1 class="text-center"><span itemprop="name">{{ song.title }}</span> by <span itemprop="byArtist">Little Leviathan</span></h1>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Buy
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    {% if song.itunes_link %}<li role="presentation"><a role="menuitem" href="{{ song.itunes_link }}" target="_blank">iTunes</a></li>{% endif %}
+                    {% if song.soundcloud_link %}<li role="presentation"><a role="menuitem" href="{{ song.soundcloud_link }}" target="_blank">SoundCloud</a></li>{% endif %}
+                    {% if song.bandcamp_link %}<li role="presentation"><a role="menuitem" href="{{ song.bandcamp_link }}" target="_blank">Bandcamp</a></li>{% endif %}
+                    {% if song.spotify_link %}<li role="presentation"><a role="menuitem" href="{{ song.spotify_link }}" target="_blank">Spotify</a></li>{% endif %}
+                </ul>
             </div>
         </div>
     </div>
     <div class="row top-buffer">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
+        <div class="col-sm-6 col-sm-offset-3">
             {{ song.lyrics|linebreaks }}
         </div>
     </div>
