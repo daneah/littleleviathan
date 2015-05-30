@@ -18,15 +18,15 @@
 {% block title %}{{ song.title }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicRecording">
     <div class="row">
         <div class="nopadding col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-            <img class="img-responsive large-album-cover" src="{{ song.art.url }}" alt="{{ song.title }} art" />
+            <img class="img-responsive large-album-cover" itemprop="image" src="{{ song.art.url }}" alt="Artwork for &quot;{{ song.title }}&quot; by Little Leviathan" />
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-            <h1>{{ song.title }}</h1>
+            <h1><span itemprop="name">{{ song.title }}</span> by <span itemprop="byArtist">Little Leviathan</span></h1>
             <div class="buy-links btn-group">
                 {% if song.itunes_link %}<a class="btn btn-large btn-primary" href="{{ song.itunes_link }}" target="_blank">iTunes</a>{% endif %}
                 {% if song.soundcloud_link %}<a class="btn btn-large btn-primary" href="{{ song.soundcloud_link }}" target="_blank">SoundCloud</a>{% endif %}
