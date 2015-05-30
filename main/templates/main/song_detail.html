@@ -20,13 +20,13 @@
 {% block content %}
 <div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicRecording">
     <div class="row">
-        <div class="nopadding col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+        <div class="nopadding col-xs-12 col-sm-6 col-sm-offset-3">
             <img class="img-responsive large-album-cover" itemprop="image" src="{{ song.art.url }}" alt="Artwork for &quot;{{ song.title }}&quot; by Little Leviathan" />
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-            <h1 class="text-center"><span itemprop="name">{{ song.title }}</span> by <span itemprop="byArtist">Little Leviathan</span></h1>
+            <h1><span itemprop="name">{{ song.title }}</span> by <span itemprop="byArtist">Little Leviathan</span></h1>
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Buy
                     <span class="caret"></span>
