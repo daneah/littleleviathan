@@ -8,15 +8,31 @@
 {% block content %}
 <div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicGroup">
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
             <div class="text-center">
                 <a href="{% url 'main:album' featured_album.code %}">
                     <img class="img-responsive large-album-cover" src="{{ featured_album.cover_art.url }}" alt="Cover art for {{ featured_album.title }} by Little Leviathan" />
                 </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <div class="text-center">
                 <div class="top-buffer">
                 {% include 'spotify.html' with show_spotify_follower_count=0 %}
                 </div>
             </div>
+            <a href="http://www.songkick.com/artists/8528989"
+               class="songkick-widget"
+               data-theme="light"
+               data-track-button="on"
+               data-detect-style="true"
+               data-font-color="#333"
+               data-background-color="transparent">
+               Little Leviathan Shows
+            </a>
+            <script src="//widget.songkick.com/widget.js"></script>
         </div>
     </div>
 </div>
