@@ -5,7 +5,7 @@ python:
 script:
   - python manage.py test --noinput
 before_script:
-  - ./manage.py migrate
+  - python manage.py migrate
   - bower update
   - sass assets/css/site.sass assets/css/site.css
   - python manage.py collectstatic --noinput --ignore *.sass
