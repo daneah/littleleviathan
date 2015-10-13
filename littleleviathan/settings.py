@@ -8,7 +8,6 @@ PROJECT_VARIABLE_PATTERN = '_'.join((PROJECT_NAME, '{}'))
 SECRET_KEY = os.getenv(PROJECT_VARIABLE_PATTERN.format('SECRET_KEY'))
 
 DEBUG = os.getenv(PROJECT_VARIABLE_PATTERN.format('DEBUG'), False) == 'TRUE'
-TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = os.getenv(PROJECT_VARIABLE_PATTERN.format('ALLOWED_HOSTS'), '*').split(',')
 
@@ -38,18 +37,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.request',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages',
-    'context_processors.template_visible_settings',
-)
-
 SOCIAL_MEDIA = {
     'facebook': 'http://www.facebook.com/littleleviathanmusic',
     'instagram': 'http://www.instagram.com/littleleviathanmusic',
@@ -58,12 +45,28 @@ SOCIAL_MEDIA = {
     'last_fm': 'http://www.last.fm/music/Little+Leviathan',
 }
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'debug': DEBUG,
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'context_processors.template_visible_settings',
+            ],
+        },
+    },
+]
+
 TEMPLATE_VISIBLE_SETTINGS = (
     'SOCIAL_MEDIA',
-)
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
 )
 
 STATICFILES_DIRS = (
