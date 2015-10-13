@@ -5,4 +5,5 @@ python:
 script:
   - python manage.py test --noinput
 before_script:
+  - ./manage.py compress
   - mysql -e 'create database littleleviathan;'
