@@ -3,7 +3,7 @@ from django.test import TestCase
 from main.models import Album
 
 
-class HomePageTestCase(TestCase):
+class MainTestCase(TestCase):
 
     def test_home_page_view(self):
         response = self.client.get('/')

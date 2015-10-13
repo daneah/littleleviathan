@@ -37,10 +37,7 @@
         <link rel="icon" href="{% block favicon %}{% static 'images/favicon.ico' %}{% endblock %}" />
         {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}" />
-        <style type="text/css">
-        {% block css %}
-        {% endblock css %}
-        </style>
+        {% block css %}{% endblock css %}
         {% endcompress %}
     </head>
 
