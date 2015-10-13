@@ -117,3 +117,15 @@ COMPRESS_OFFLINE = True
 COMPRESS_OUTPUT_DIR = ''
 
 FEATURED_ALBUM = 'Little Leviathan'
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner' 
+
+NOSE_ARGS = [
+    '-d',
+    '--quiet',
+    '--with-fixture-bundling',
+    '--with-coverage',
+    '--cover-package=.',
+    '--cover-erase',
+    '--cover-branches',
+]
