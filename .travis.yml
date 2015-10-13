@@ -5,9 +5,9 @@ python:
 script:
   - python manage.py test --noinput
 before_script:
+  - mysql -e 'create database littleleviathan;'
   - python manage.py migrate
   - bower update
   - sass assets/css/site.sass assets/css/site.css
   - python manage.py collectstatic --noinput --ignore *.sass
   - python manage.py compress
-  - mysql -e 'create database littleleviathan;'
