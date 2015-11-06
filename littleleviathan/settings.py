@@ -45,6 +45,23 @@ SOCIAL_MEDIA = {
     'last_fm': 'http://www.last.fm/music/Little+Leviathan',
 }
 
+BASE_KEYWORDS = [
+    'Ann Arbor',
+    'Michigan',
+    'Ann Arbor Michigan',
+    'folk',
+    'music',
+    'folk music',
+    'Ann Arbor musicians',
+    'Michigan musicians',
+    'independent musicians',
+    'Little Leviathan',
+    'leviathan',
+    'Little Leviathan music',
+    'Little Leviathan album',
+    'Little Leviathan band',
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,6 +84,7 @@ TEMPLATES = [
 
 TEMPLATE_VISIBLE_SETTINGS = (
     'SOCIAL_MEDIA',
+    'BASE_KEYWORDS',
 )
 
 STATICFILES_DIRS = (

@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="description" content="{% block page_description %}American folk singer/songwriter in Ann Arbor, Michigan{% endblock %}" />
-        <meta name="keywords" content="{% block page_keywords %}Ann Arbor, Michigan, Ann Arbor Michigan, folk, music, folk music, Ann Arbor musicians, Michigan musicians, independent musicians, Little Leviathan, leviathan, Little Leviathan music, Little Leviathan album, Little Leviathan band{% endblock %}" />
+        <meta name="keywords" content="{% block page_keywords %}{{ BASE_KEYWORDS|join:", " }}{% endblock %}" />
 
         <meta name="google-site-verification" content="-QpLuOKOuM7nqIe0ja63OwEkaDwCIE5J4CNaExmizp0" />
 
@@ -35,6 +35,7 @@
 
         <title>{% block title %}Little Leviathan{% endblock %}</title>
         <link rel="icon" href="{% block favicon %}{% static 'images/favicon.ico' %}{% endblock %}" />
+
         {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}" />
         {% block css %}{% endblock css %}
