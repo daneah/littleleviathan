@@ -89,7 +89,7 @@ TEMPLATE_VISIBLE_SETTINGS = (
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
-    os.path.join(BASE_DIR, 'bower_components'),
+    os.path.join(BASE_DIR, 'node_modules'),
 )
 
 STATICFILES_FINDERS = (

@@ -58,8 +58,8 @@ target/
 # PyCharm
 .idea/
 
-# Bower
-bower_components/
+# NPM
+node_modules/
 
 # SASS
 *.css

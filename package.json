@@ -1,0 +1,7 @@
+{
+    "name": "littleleviathan",
+    "version": "1.0.0",
+    "dependencies": {
+        "bootstrap-sass": "~3.3.3"
+    }
+}
