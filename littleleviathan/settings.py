@@ -131,7 +131,6 @@ COMPRESS_PRECOMPILERS = (
     ('text/x-sass', 'sass {infile} {outfile}'),
 )
 
-COMPRESS_OFFLINE = True
 COMPRESS_OUTPUT_DIR = ''
 
 FEATURED_ALBUM = 'Little Leviathan'
