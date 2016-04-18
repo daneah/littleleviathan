@@ -98,8 +98,8 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-ROOT_URLCONF = 'littleleviathan.urls'
-WSGI_APPLICATION = 'littleleviathan.wsgi.application'
+ROOT_URLCONF = 'configuration.urls'
+WSGI_APPLICATION = 'configuration.wsgi.application'
 
 DATABASES = {
     'default': {
