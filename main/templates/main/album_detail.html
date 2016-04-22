@@ -22,54 +22,58 @@
 
 {% block content %}
 <div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicAlbum">
-    <div class="row">
-        <div class="top-buffer nopadding col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-            <img class="img-responsive large-album-cover" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" itemprop="image" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-            <h1 itemprop="name">{{ album.title }}</h1>
-            <div class="buy-links btn-group">
-                {% if album.itunes_link %}<a class="btn btn-large btn-primary" href="{{ album.itunes_link }}" target="_blank">iTunes</a>{% endif %}
-                {% if album.soundcloud_link %}<a class="btn btn-large btn-primary" href="{{ album.soundcloud_link }}" target="_blank">SoundCloud</a>{% endif %}
-                {% if album.bandcamp_link %}<a class="btn btn-large btn-primary" href="{{ album.bandcamp_link }}" target="_blank">Bandcamp</a>{% endif %}
-                {% if album.spotify_link %}<a class="btn btn-large btn-primary" href="{{ album.spotify_link }}" target="_blank">Spotify</a>{% endif %}
+    <div class="row bottom-buffer">
+        <div class="col-sm-3">
+            <div class="row">
+                <img class="img-responsive large-album-cover" src="{{ album.cover_art.url }}" alt="{{ album.title }} cover art" itemprop="image" />
+            </div>
+            <h1 class="text-center" itemprop="name">{{ album.title }}</h1>
+            <div itemprop="about">
+                {{ album.synopsis|linebreaks }}
             </div>
         </div>
-    </div>
-    {% if album.song_set.all %}
-    <div class="row top-buffer">
-        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-            <h2 class="text-center" itemprop="numTracks">{{ album.song_set.count }} track{{ album.song_set.count|pluralize }}</h2>
-            <table class="table table-striped">
-                <tr>
-                    <th>#</th>
-                    <th>Title</th>
-                    <th>Duration</th>
-                </tr>
-            {% for song in album.song_set.all %}
-                <tr itemprop="track" itemscope itemtype="http://www.schema.org/MusicRecording">
-                    <td>{{ forloop.counter }}</td>
-                    <td>
-                        <a href="{% url 'main:song' album.code song.code %}" itemprop="url">
-                            <span itemprop="name">{{ song.title }}</span>
-                        </a>
-                    </td>
-                    <td>
-                        <meta itemprop="duration" content="PT{{ song.duration_seconds|minutes_part }}M{{ song.duration_seconds|seconds_part }}S" />
-                        {{ song.duration_seconds|minutes_part }}:{{ song.duration_seconds|seconds_part }}
-                    </td>
-                </tr>
-            {% endfor %}
-            </table>
+        <div class="col-sm-9">
+            {% if album.itunes_link or album.soundcloud_link or album.bandcamp_link or album.spotify_link %}
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 text-center">
+                    <div class="buy-links btn-group">
+                        {% if album.itunes_link %}<a class="btn btn-large btn-primary" href="{{ album.itunes_link }}" target="_blank">iTunes</a>{% endif %}
+                        {% if album.soundcloud_link %}<a class="btn btn-large btn-primary" href="{{ album.soundcloud_link }}" target="_blank">SoundCloud</a>{% endif %}
+                        {% if album.bandcamp_link %}<a class="btn btn-large btn-primary" href="{{ album.bandcamp_link }}" target="_blank">Bandcamp</a>{% endif %}
+                        {% if album.spotify_link %}<a class="btn btn-large btn-primary" href="{{ album.spotify_link }}" target="_blank">Spotify</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if album.song_set.all %}
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <h2 class="text-center" itemprop="numTracks">{{ album.song_set.count }} track{{ album.song_set.count|pluralize }}</h2>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Duration</th>
+                        </tr>
+                        {% for song in album.song_set.all %}
+                        <tr itemprop="track" itemscope itemtype="http://www.schema.org/MusicRecording">
+                            <td>{{ forloop.counter }}</td>
+                            <td>
+                                <a href="{% url 'main:song' album.code song.code %}" itemprop="url">
+                                    <span itemprop="name">{{ song.title }}</span>
+                                </a>
+                            </td>
+                            <td>
+                                <meta itemprop="duration" content="PT{{ song.duration_seconds|minutes_part }}M{{ song.duration_seconds|seconds_part }}S" />
+                                {{ song.duration_seconds|minutes_part }}:{{ song.duration_seconds|seconds_part }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-justify" itemprop="about">
-            {{ album.synopsis|linebreaks }}
-        </div>
-    </div>
-    {% endif %}
 </div>
 {% endblock content %}
