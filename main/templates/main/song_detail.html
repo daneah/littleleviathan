@@ -20,13 +20,10 @@
 {% block content %}
 <div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicRecording">
     <div class="row">
-        <div class="nopadding col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+        <div class="col-sm-3">
             <img class="img-responsive large-album-cover" itemprop="image" src="{{ song.art.url }}" alt="Artwork for &quot;{{ song.title }}&quot; by Little Leviathan" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
             <h1><span itemprop="name">{{ song.title }}</span><small> by <span itemprop="byArtist">Little Leviathan</span></small></h1>
+            {% if song.itunes_link or song.soundcloud_link or song.bandcamp_link or song.spotify_link %}
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Buy
                     <span class="caret"></span>
@@ -38,11 +35,15 @@
                     {% if song.spotify_link %}<li role="presentation"><a role="menuitem" href="{{ song.spotify_link }}" target="_blank">Spotify</a></li>{% endif %}
                 </ul>
             </div>
+            {% endif %}
         </div>
-    </div>
-    <div class="row top-buffer">
-        <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-            {{ song.lyrics|linebreaks }}
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2" itemprop="description">
+                    <h2>Lyrics</h2>
+                    {{ song.lyrics|linebreaks }}
+                </div>
+            </div>
         </div>
     </div>
 </div>
