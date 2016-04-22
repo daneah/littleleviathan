@@ -34,7 +34,7 @@
         </div>
         <div class="col-sm-9">
             {% if album.itunes_link or album.soundcloud_link or album.bandcamp_link or album.spotify_link %}
-            <div class="row">
+            <div class="row top-buffer">
                 <div class="col-sm-8 col-sm-offset-2 text-center">
                     <div class="buy-links btn-group">
                         {% if album.itunes_link %}<a class="btn btn-large btn-primary" href="{{ album.itunes_link }}" target="_blank">iTunes</a>{% endif %}
@@ -46,7 +46,7 @@
             </div>
             {% endif %}
             {% if album.song_set.all %}
-            <div class="row top-buffer">
+            <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
                     <h2 itemprop="numTracks">{{ album.song_set.count }} track{{ album.song_set.count|pluralize }}</h2>
                     <table class="table table-striped">
