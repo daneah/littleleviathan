@@ -15,7 +15,7 @@ ADMINS = (
     ('Dane', 'github@danehillard.com'),
 )
 
-INSTALLED_APPS = (
+BUILTIN_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -23,10 +23,24 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+MY_APPS = [
     'main',
+]
+
+THIRD_PARTY_APPS = [
     'compressor',
+]
+
+DEV_APPS = [
     'debug_toolbar',
-)
+]
+
+INSTALLED_APPS = BUILTIN_APPS + THIRD_PARTY_APPS + MY_APPS
+
+if DEBUG:
+    INSTALLED_APPS += DEV_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -136,7 +150,7 @@ COMPRESS_OUTPUT_DIR = ''
 
 FEATURED_ALBUM = 'Little Leviathan'
 
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner' 
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 NOSE_ARGS = [
     '-d',

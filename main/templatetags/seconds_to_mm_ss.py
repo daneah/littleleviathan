@@ -4,9 +4,11 @@ from django import template
 
 register = template.Library()
 
+
 @register.filter
 def minutes_part(seconds):
     return floor(seconds / 60)
+
 
 @register.filter
 def seconds_part(seconds):
