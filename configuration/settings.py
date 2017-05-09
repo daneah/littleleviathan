@@ -1,4 +1,7 @@
 import os
+
+from django.http import Http404
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Set environment variables prepended with LITTLELEVIATHAN_ for configuration
