@@ -42,7 +42,7 @@ INSTALLED_APPS = BUILTIN_APPS + THIRD_PARTY_APPS + MY_APPS
 if DEBUG:
     INSTALLED_APPS += DEV_APPS
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -50,7 +50,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+]
+
+if DEBUG:
+    MIDDLEWARE_CLASSES += ['debug_toolbar.middleware.DebugToolbarMiddleware']
 
 SOCIAL_MEDIA = {
     'facebook': 'http://www.facebook.com/littleleviathanmusic',
