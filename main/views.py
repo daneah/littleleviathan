@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.views.generic import TemplateView, ListView, DetailView
+from django.shortcuts import render
 
 from main.models import Album, Song
 
@@ -30,3 +31,11 @@ class SongDetailView(DetailView):
     model = Song
     slug_field = 'code'
     slug_url_kwarg = 'song_code'
+
+
+class AboutView(TemplateView):
+    template_name = 'main/about.html'
+
+
+class PressView(TemplateView):
+    template_name = 'main/press.html'
