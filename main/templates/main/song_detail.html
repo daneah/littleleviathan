@@ -21,7 +21,7 @@
 <div class="container-fluid" itemscope itemtype="http://www.schema.org/MusicRecording">
     <div class="row">
         <div class="col-sm-3">
-            <img class="img-responsive large-album-cover" itemprop="image" src="{{ song.art.url }}" alt="Artwork for &quot;{{ song.title }}&quot; by Little Leviathan" />
+            <img class="img-responsive center-block" itemprop="image" src="{{ song.art.url }}" alt="Artwork for &quot;{{ song.title }}&quot; by Little Leviathan" />
             <h1><span itemprop="name">{{ song.title }}</span><small> by <span itemprop="byArtist">Little Leviathan</span></small></h1>
             {% if song.itunes_link or song.soundcloud_link or song.bandcamp_link or song.spotify_link %}
             <div class="dropdown">

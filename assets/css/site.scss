@@ -1,0 +1,19 @@
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+$body-bg: #CFE0F2;
+$jumbotron-bg: $body-bg;
+$over-bg: lighten($body-bg, 8);
+$section-heading: lighten($body-bg, 8);
+$table-bg-accent: darken($body-bg, 5);
+$table-border-color: transparent;
+$icon-font-path: "../bootstrap-sass/assets/fonts/bootstrap/";
+
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.top-buffer {
+  margin-top: 50px;
+}
+
+.bottom-buffer {
+  margin-bottom: 50px;
+}
