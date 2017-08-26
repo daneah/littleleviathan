@@ -1,4 +1,4 @@
-{% extends '__base.html' %}
+{% extends '__base_no_disqus.html' %}
 {% block title %}{% block error_page_title %}{% endblock %} | {{ block.super }}{% endblock %}
 {% block content %}
 <div class="row">
@@ -13,4 +13,3 @@
     </div>
 </div>
 {% endblock %}
-{% block disqus %}{% endblock %}
