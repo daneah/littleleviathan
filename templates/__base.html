@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load compress %}
+
 {% with request.META.HTTP_HOST as base_uri %}
 {% with request.build_absolute_uri as page_uri %}
 <!doctype html>
@@ -46,8 +47,18 @@
         <a href="{% url 'main:home' %}">
             <img class="img-responsive center-block top-buffer bottom-buffer" src="{% static 'images/little-leviathan-wordmark.png' %}" alt="Little Leviathan" />
         </a>
+
+        <div class="text-center">
+            <ul class="list-inline lead">
+                <li><a href="{% url 'main:albums' %}">Music</a></li>
+                <li><a href="{% url 'main:about' %}">About</a></li>
+                <li><a href="{% url 'main:press' %}">Press</a></li>
+            </ul>
+        </div>
+
         {% block content %}
         {% endblock content %}
+
         {% block disqus %}
         <div class="container-fluid">
             <div class="row top-buffer">
@@ -57,6 +68,7 @@
             </div>
         </div>
         {% endblock disqus %}
+
         {% compress js %}
         {% block js %}
         <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
