@@ -14,5 +14,5 @@ before_script:
   - mysql -e 'create database littleleviathan;'
   - python manage.py migrate
   - npm install
-  - sass assets/css/site.sass assets/css/site.css
+  - sass assets/css/site.scss assets/css/site.css
   - python manage.py collectstatic --noinput --ignore *.sass
