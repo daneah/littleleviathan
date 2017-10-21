@@ -49,7 +49,7 @@ INSTALLED_APPS = BUILTIN_APPS + THIRD_PARTY_APPS + MY_APPS
 if DEBUG:
     INSTALLED_APPS += DEV_APPS
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,7 +61,7 @@ MIDDLEWARE_CLASSES = [
 ]
 
 if DEBUG:
-    MIDDLEWARE_CLASSES += ['debug_toolbar.middleware.DebugToolbarMiddleware']
+    MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware']
 
 SOCIAL_MEDIA = {
     'facebook': 'http://www.facebook.com/littleleviathanmusic',
