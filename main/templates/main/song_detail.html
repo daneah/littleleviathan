@@ -5,12 +5,12 @@
 
 {% block og_title %}{{ song.title }} | {{ block.super }}{% endblock %}
 {% block og_description %}{{ song.title }}: a track from the album {{ song.album.title }} by Little Leviathan{% endblock %}
-{% block og_image %}http://{{ base_uri }}{{ song.art.url }}{% endblock %}
+{% block og_image %}https://{{ base_uri }}{{ song.art.url }}{% endblock %}
 {% block og_image_height %}{{ song.art_height }}{% endblock %}
 {% block og_image_width %}{{ song.art_width }}{% endblock %}
 
 {% block twitter_title %}{{ song.title }} | {{ block.super }}{% endblock %}
-{% block twitter_image_src %}http://{{ base_uri }}{{ song.art.url }}{% endblock %}
+{% block twitter_image_src %}https://{{ base_uri }}{{ song.art.url }}{% endblock %}
 {% block twitter_image_height %}{{ song.art_height }}{% endblock %}
 {% block twitter_image_width %}{{ song.art_width }}{% endblock %}
 {% block twitter_description %}{{ song.title }}: a track from the album {{ song.album.title }} by Little Leviathan{% endblock %}

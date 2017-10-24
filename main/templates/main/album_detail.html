@@ -8,12 +8,12 @@
 
 {% block og_title %}{{ album.title }} | {{ block.super }}{% endblock %}
 {% block og_description %}{{ album.title }}: {{ album.synopsis|remove_newlines|truncatechars:50 }}{% endblock %}
-{% block og_image %}http://{{ base_uri }}{{ album.cover_art.url }}{% endblock %}
+{% block og_image %}https://{{ base_uri }}{{ album.cover_art.url }}{% endblock %}
 {% block og_image_height %}{{ album.cover_art_height }}{% endblock %}
 {% block og_image_width %}{{ album.cover_art_width }}{% endblock %}
 
 {% block twitter_title %}{{ album.title }} | {{ block.super }}{% endblock %}
-{% block twitter_image_src %}http://{{ base_uri }}{{ album.cover_art.url }}{% endblock %}
+{% block twitter_image_src %}https://{{ base_uri }}{{ album.cover_art.url }}{% endblock %}
 {% block twitter_image_height %}{{ album.cover_art_height }}{% endblock %}
 {% block twitter_image_width %}{{ album.cover_art_width }}{% endblock %}
 {% block twitter_description %}{{ album.title }}: {{ album.synopsis|remove_newlines|truncatechars:50 }}{% endblock %}
