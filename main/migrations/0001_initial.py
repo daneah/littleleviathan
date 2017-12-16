@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
                 ('title', models.CharField(max_length=255)),
                 ('lyrics', models.TextField()),
-                ('album', models.ForeignKey(to='main.Album')),
+                ('album', models.ForeignKey(to='main.Album', on_delete=models.CASCADE)),
             ],
             options={
             },
