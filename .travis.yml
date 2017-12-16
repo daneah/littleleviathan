@@ -13,9 +13,9 @@ install:
   - pip install pipenv
   - pipenv install --dev
 before_script:
-  - gem install sass
   - mysql -e 'create database littleleviathan;'
   - pipenv run python manage.py migrate
   - npm install
-  - sass assets/css/site.scss assets/css/site.css
+  - bundle install
+  - compass compile -e production
   - pipenv run python manage.py collectstatic --noinput --ignore *.sass
