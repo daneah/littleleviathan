@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 
 from . import views
 
+app_name = 'main'
 
 urlpatterns = [
     url(r'^$', views.HomeView.as_view(), name='home'),

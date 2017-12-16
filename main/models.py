@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 class Album(models.Model):
@@ -25,7 +25,7 @@ class Song(models.Model):
     title = models.CharField(max_length=255)
     code = models.SlugField(max_length=50)
     lyrics = models.TextField()
-    album = models.ForeignKey(Album)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE)
     index = models.IntegerField()
     art_height = models.IntegerField()
     art_width = models.IntegerField()
