@@ -60,6 +60,8 @@ target/
 
 # NPM
 node_modules/
+assets/dist/
+webpack-stats.json
 
 # SASS
 *.css
