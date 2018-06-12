@@ -1,5 +1,5 @@
 {% load staticfiles %}
-{% load compress %}
+{% load webpack_loader %}
 
 {% with request.META.HTTP_HOST as base_uri %}
 {% with request.build_absolute_uri as page_uri %}
@@ -37,10 +37,8 @@
         <title>{% block title %}Little Leviathan{% endblock %}</title>
         <link rel="icon" href="{% block favicon %}{% static 'images/favicon.ico' %}{% endblock %}" />
 
-        {% compress css %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}" />
+        {% render_bundle 'main' 'css' %}
         {% block css %}{% endblock css %}
-        {% endcompress %}
     </head>
 
     <body>
@@ -69,13 +67,9 @@
         </div>
         {% endblock disqus %}
 
-        {% compress js %}
         {% block js %}
-        <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'bootstrap-sass/assets/javascripts/bootstrap.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/analytics.js' %}"></script>
+        {% render_bundle 'analytics' 'js' %}
         {% endblock js %}
-        {% endcompress %}
     </body>
 </html>
 {% endwith %}

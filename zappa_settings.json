@@ -1,0 +1,24 @@
+{
+    "staging": {
+        "aws_region": "us-east-1",
+        "django_settings": "configuration.settings",
+        "profile_name": "littleleviathan",
+        "project_name": "littleleviathan",
+        "runtime": "python3.6",
+        "s3_bucket": "little-leviathan",
+        "domain": "staging.littleleviathan.com",
+        "exclude": ["node_modules", ".idea", "media"],
+        "certificate_arn": "arn:aws:acm:us-east-1:716612616473:certificate/6050d15a-94ef-439e-a950-3891fe5a3018"
+    },
+    "production": {
+        "aws_region": "us-east-1",
+        "django_settings": "configuration.settings",
+        "profile_name": "littleleviathan",
+        "project_name": "littleleviathan",
+        "runtime": "python3.6",
+        "s3_bucket": "little-leviathan",
+        "domain": "www.littleleviathan.com",
+        "exclude": ["node_modules", ".idea", "media"],
+        "certificate_arn": "arn:aws:acm:us-east-1:716612616473:certificate/6050d15a-94ef-439e-a950-3891fe5a3018"
+    }
+}

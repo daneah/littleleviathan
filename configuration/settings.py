@@ -1,12 +1,23 @@
+import logging
 import os
 
 from django.http import Http404
+from django.utils.log import DEFAULT_LOGGING
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+ENVIRONMENT = os.getenv('STAGE', 'dev')
+IS_DEVELOPMENT = ENVIRONMENT == 'dev'
+IS_STAGING = ENVIRONMENT == 'staging'
+IS_PRODUCTION = ENVIRONMENT == 'production'
+IS_CI = os.getenv('CI', False) == 'true'
+
+PREPEND_WWW = IS_PRODUCTION
 
 # Set environment variables prepended with LITTLELEVIATHAN_ for configuration
 PROJECT_NAME = 'LITTLELEVIATHAN'
 PROJECT_VARIABLE_PATTERN = '_'.join((PROJECT_NAME, '{}'))
+
 
 def get_env_var(var_name, default=None):
     return os.getenv(PROJECT_VARIABLE_PATTERN.format(var_name), default)
@@ -14,7 +25,7 @@ def get_env_var(var_name, default=None):
 
 SECRET_KEY = get_env_var('SECRET_KEY')
 
-DEBUG = get_env_var('DEBUG', False) == 'TRUE'
+DEBUG = IS_DEVELOPMENT or IS_CI
 
 ALLOWED_HOSTS = get_env_var('ALLOWED_HOSTS', '*').split(',')
 
@@ -37,7 +48,7 @@ MY_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'compressor',
+    'webpack_loader',
 ]
 
 DEV_APPS = [
@@ -73,7 +84,7 @@ SOCIAL_MEDIA = {
 
 ROLLBAR = {
     'access_token': get_env_var('ROLLBAR_ACCESS_TOKEN'),
-    'environment': 'development' if DEBUG else 'production',
+    'environment': ENVIRONMENT,
     'root': BASE_DIR,
     'exception_level_filters': [
         (Http404, 'ignored'),
@@ -124,13 +135,6 @@ TEMPLATE_VISIBLE_SETTINGS = (
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
-    os.path.join(BASE_DIR, 'node_modules'),
-)
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 )
 
 ROOT_URLCONF = 'configuration.urls'
@@ -152,21 +156,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
-STATIC_URL = get_env_var('STATIC_URL', '/static/')
-STATIC_ROOT = os.path.join(BASE_DIR, get_env_var('STATIC_ROOT', 'static'))
-MEDIA_URL = get_env_var('MEDIA_URL', '/media/')
-MEDIA_ROOT = os.path.join(BASE_DIR, get_env_var('MEDIA_ROOT', 'media'))
-
-COMPRESS_CSS_FILTERS = (
-    'compressor.filters.cssmin.CSSMinFilter',
-)
-
-COMPRESS_PRECOMPILERS = (
-    ('text/x-sass', 'sass {infile} {outfile}'),
-)
-
-COMPRESS_OUTPUT_DIR = ''
 
 FEATURED_ALBUM = 'Little Leviathan'
 
@@ -191,3 +180,70 @@ CSRF_COOKIE_SECURE = not DEBUG
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_HSTS_SECONDS = 31536000
+
+LOGGING_CONFIG = None
+LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
+LOGGERS = {
+    '': {
+        'level': 'WARNING',
+        'handlers': ['console'],
+    },
+    'django.server': DEFAULT_LOGGING['loggers']['django.server']
+}
+LOGGERS.update({
+    app: {
+        'level': LOG_LEVEL,
+        'handlers': ['console'],
+        'propagate': False,
+    } for app in MY_APPS
+})
+logging.config.dictConfig({
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '%(asctime)s | %(levelname)-8s | %(name)s | %(message)s',
+        },
+        'django.server': DEFAULT_LOGGING['formatters']['django.server']
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console',
+        },
+        'django.server': DEFAULT_LOGGING['handlers']['django.server']
+    },
+    'loggers': LOGGERS,
+})
+
+if IS_PRODUCTION or IS_STAGING:
+    STATICFILES_STORAGE = 'configuration.storages.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'configuration.storages.MediaStorage'
+else:
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+BUCKET_PREFIX = os.getenv('BUCKET_PREFIX')
+
+MEDIA_BUCKET_NAME = f'{BUCKET_PREFIX}-media-{ENVIRONMENT}'
+MEDIA_DOMAIN = f'media-{ENVIRONMENT}.littleleviathan.com'
+MEDIA_URL = '/media/' if DEBUG else f'https://{MEDIA_DOMAIN}/'
+
+STATIC_BUCKET_NAME = f'{BUCKET_PREFIX}-static-{ENVIRONMENT}'
+STATIC_DOMAIN = f'static-{ENVIRONMENT}.littleleviathan.com'
+STATIC_URL = '/static/' if DEBUG else f'https://{STATIC_DOMAIN}/'
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_IS_GZIPPED = True
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'dist/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': ['.+\.hot-update.js', '.+\.map']
+    }
+}
