@@ -11,5 +11,5 @@ before_script:
   - pipenv run python manage.py migrate
   - npm install
   - npm build
-notificaations:
+notifications:
   email: false
