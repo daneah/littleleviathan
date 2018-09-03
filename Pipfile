@@ -1,25 +1,20 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
 [requires]
-
 python_version = "3.6"
 
 [packages]
-
 django = "~=2.0.4"
-mysqlclient = "*"
 Pillow = "*"
 rollbar = "*"
 zappa = "*"
 django-storages = "*"
 django-webpack-loader = "*"
-
+mysql-connector-python = "*"
 
 [dev-packages]
-
 coverage = "*"
 django-debug-toolbar = "*"
