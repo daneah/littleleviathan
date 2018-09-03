@@ -4,10 +4,10 @@
 {% with request.META.HTTP_HOST as base_uri %}
 {% with request.build_absolute_uri as page_uri %}
 <!doctype html>
-<html>
-    <head lang="en">
+<html lang="en">
+    <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="{% block page_description %}American folk singer/songwriter in Ann Arbor, Michigan{% endblock %}" />
         <meta name="keywords" content="{% block page_keywords %}{{ BASE_KEYWORDS|join:", " }}{% endblock %}" />
 
@@ -19,7 +19,7 @@
         <meta property="og:url" content="{% block og_url %}{{ page_uri }}{% endblock %}" />
         <meta property="og:site_name" content="{% block og_site_name %}Little Leviathan{% endblock %}" />
         <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
-        <meta property="og:image" content="{% block og_image %}{{ page_uri }}{% static 'images/whale.png' %}{% endblock %}" />
+        <meta property="og:image" content="{% block og_image %}{% static 'images/whale.png' %}{% endblock %}" />
         <meta property="og:image:type" content="{% block og_image_type %}image/png{% endblock %}" />
         <meta property="og:image:height" content="{% block og_image_height %}341{% endblock %}" />
         <meta property="og:image:width" content="{% block og_image_width %}800{% endblock %}" />
@@ -30,7 +30,7 @@
         <meta name="twitter:creator" content="{% block twitter_creator %}@danehillard{% endblock %}" />
         <meta name="twitter:title" content="{% block twitter_title %}Little Leviathan{% endblock %}" />
         <meta name="twitter:description" content="{% block twitter_description %}{% endblock %}" />
-        <meta name="twitter:image:src" content="{% block twitter_image_src %}{{ page_uri }}{% static 'images/whale.png' %}{% endblock %}" />
+        <meta name="twitter:image:src" content="{% block twitter_image_src %}{% static 'images/whale.png' %}{% endblock %}" />
         <meta name="twitter:image:height" content="{% block twitter_image_height %}341{% endblock %}" />
         <meta name="twitter:image:width" content="{% block twitter_image_width %}800{% endblock %}" />
 

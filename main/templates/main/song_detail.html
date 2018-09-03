@@ -5,12 +5,12 @@
 
 {% block og_title %}{{ song.title }} | {{ block.super }}{% endblock %}
 {% block og_description %}{{ song.title }}: a track from the album {{ song.album.title }} by Little Leviathan{% endblock %}
-{% block og_image %}https://{{ base_uri }}{{ song.art.url }}{% endblock %}
+{% block og_image %}{{ song.art.url }}{% endblock %}
 {% block og_image_height %}{{ song.art_height }}{% endblock %}
 {% block og_image_width %}{{ song.art_width }}{% endblock %}
 
 {% block twitter_title %}{{ song.title }} | {{ block.super }}{% endblock %}
-{% block twitter_image_src %}https://{{ base_uri }}{{ song.art.url }}{% endblock %}
+{% block twitter_image_src %}{{ song.art.url }}{% endblock %}
 {% block twitter_image_height %}{{ song.art_height }}{% endblock %}
 {% block twitter_image_width %}{{ song.art_width }}{% endblock %}
 {% block twitter_description %}{{ song.title }}: a track from the album {{ song.album.title }} by Little Leviathan{% endblock %}
@@ -29,10 +29,10 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    {% if song.itunes_link %}<li role="presentation"><a role="menuitem" href="{{ song.itunes_link }}" target="_blank">iTunes</a></li>{% endif %}
-                    {% if song.soundcloud_link %}<li role="presentation"><a role="menuitem" href="{{ song.soundcloud_link }}" target="_blank">SoundCloud</a></li>{% endif %}
-                    {% if song.bandcamp_link %}<li role="presentation"><a role="menuitem" href="{{ song.bandcamp_link }}" target="_blank">Bandcamp</a></li>{% endif %}
-                    {% if song.spotify_link %}<li role="presentation"><a role="menuitem" href="{{ song.spotify_link }}" target="_blank">Spotify</a></li>{% endif %}
+                    {% if song.itunes_link %}<li role="presentation"><a role="menuitem" href="{{ song.itunes_link }}" rel="noopener" target="_blank">iTunes</a></li>{% endif %}
+                    {% if song.soundcloud_link %}<li role="presentation"><a role="menuitem" href="{{ song.soundcloud_link }}" rel="noopener" target="_blank">SoundCloud</a></li>{% endif %}
+                    {% if song.bandcamp_link %}<li role="presentation"><a role="menuitem" href="{{ song.bandcamp_link }}" rel="noopener" target="_blank">Bandcamp</a></li>{% endif %}
+                    {% if song.spotify_link %}<li role="presentation"><a role="menuitem" href="{{ song.spotify_link }}" rel="noopener" target="_blank">Spotify</a></li>{% endif %}
                 </ul>
             </div>
             {% endif %}

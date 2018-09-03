@@ -8,12 +8,12 @@
 
 {% block og_title %}{{ album.title }} | {{ block.super }}{% endblock %}
 {% block og_description %}{{ album.title }}: {{ album.synopsis|remove_newlines|truncatechars:50 }}{% endblock %}
-{% block og_image %}https://{{ base_uri }}{{ album.cover_art.url }}{% endblock %}
+{% block og_image %}{{ album.cover_art.url }}{% endblock %}
 {% block og_image_height %}{{ album.cover_art_height }}{% endblock %}
 {% block og_image_width %}{{ album.cover_art_width }}{% endblock %}
 
 {% block twitter_title %}{{ album.title }} | {{ block.super }}{% endblock %}
-{% block twitter_image_src %}https://{{ base_uri }}{{ album.cover_art.url }}{% endblock %}
+{% block twitter_image_src %}{{ album.cover_art.url }}{% endblock %}
 {% block twitter_image_height %}{{ album.cover_art_height }}{% endblock %}
 {% block twitter_image_width %}{{ album.cover_art_width }}{% endblock %}
 {% block twitter_description %}{{ album.title }}: {{ album.synopsis|remove_newlines|truncatechars:50 }}{% endblock %}
@@ -37,10 +37,10 @@
             <div class="row top-buffer">
                 <div class="col-sm-8 col-sm-offset-2 text-center">
                     <div class="buy-links btn-group">
-                        {% if album.itunes_link %}<a class="btn btn-large btn-primary" href="{{ album.itunes_link }}" target="_blank">iTunes</a>{% endif %}
-                        {% if album.soundcloud_link %}<a class="btn btn-large btn-primary" href="{{ album.soundcloud_link }}" target="_blank">SoundCloud</a>{% endif %}
-                        {% if album.bandcamp_link %}<a class="btn btn-large btn-primary" href="{{ album.bandcamp_link }}" target="_blank">Bandcamp</a>{% endif %}
-                        {% if album.spotify_link %}<a class="btn btn-large btn-primary" href="{{ album.spotify_link }}" target="_blank">Spotify</a>{% endif %}
+                        {% if album.itunes_link %}<a class="btn btn-large btn-primary" href="{{ album.itunes_link }}" rel="noopener" target="_blank">iTunes</a>{% endif %}
+                        {% if album.soundcloud_link %}<a class="btn btn-large btn-primary" href="{{ album.soundcloud_link }}" rel="noopener" target="_blank">SoundCloud</a>{% endif %}
+                        {% if album.bandcamp_link %}<a class="btn btn-large btn-primary" href="{{ album.bandcamp_link }}" rel="noopener" target="_blank">Bandcamp</a>{% endif %}
+                        {% if album.spotify_link %}<a class="btn btn-large btn-primary" href="{{ album.spotify_link }}" rel="noopener" target="_blank">Spotify</a>{% endif %}
                     </div>
                 </div>
             </div>
