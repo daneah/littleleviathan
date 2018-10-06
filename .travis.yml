@@ -2,13 +2,13 @@ language: python
 python:
   - "3.6"
 script:
-  - pipenv run coverage run --source='.' manage.py test --noinput && coverage report
+  - PIPENV_IGNORE_VIRTUALENVS=1 pipenv run coverage run --source='.' manage.py test --noinput && coverage report
 install:
   - pip install pipenv
   - PIPENV_IGNORE_VIRTUALENVS=1 pipenv install --dev --deploy
 before_script:
   - mysql -e 'create database littleleviathan;'
-  - PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python manage.py migrate
+  - pipenv run python manage.py migrate
   - npm install
   - npm build
 notifications:
