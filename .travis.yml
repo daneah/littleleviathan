@@ -8,7 +8,7 @@ install:
   - PIPENV_IGNORE_VIRTUALENVS=1 pipenv install --dev --deploy
 before_script:
   - mysql -e 'create database littleleviathan;'
-  - pipenv run python manage.py migrate
+  - PIPENV_IGNORE_VIRTUALENVS=1 pipenv run python manage.py migrate
   - npm install
   - npm build
 notifications:
