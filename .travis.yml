@@ -9,7 +9,7 @@ install:
 before_script:
   - mysql -e 'create database littleleviathan;'
   - pipenv run python manage.py migrate
-  - npm install
+  - npm ci
   - npm build
 notifications:
   email: false
