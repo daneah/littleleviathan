@@ -13,7 +13,7 @@ rollbar = "*"
 zappa = "*"
 django-storages = "*"
 django-webpack-loader = "*"
-mysql-connector-python = "*"
+mysqlclient = "*"
 
 [dev-packages]
 coverage = "*"
