@@ -1,21 +1,24 @@
 <template>
   <main>
-    <img
-      class="hero"
-      src="/img/whale.png"
-      alt="Little Leviathan whale"
+    <h1>Press</h1>
+    <a
+      href="https://themerestidea.blogspot.com/2015/04/"
+      target="_blank"
+      rel="noopener"
     >
+      An Interview with Little Leviathan
+    </a>
   </main>
 </template>
 
 <script>
-const PAGE_TITLE = 'Little Leviathan';
+const PAGE_TITLE = 'Press';
 const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.';
 
 export default {
-  name: 'Home',
+  name: 'Press',
   metaInfo: {
-    titleTemplate: PAGE_TITLE,
+    title: 'Press',
     meta: [
       {
         property: 'og:title',
@@ -43,19 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hero {
-  display: block;
-  margin: 5rem auto;
-  animation: wobble 2s ease-in-out infinite alternate;
-}
-
-@keyframes wobble {
-  from {
-    transform: translateY(-7px);
-  }
-
-  to {
-    transform: translateY(3px);
-  }
+main {
+  text-align: center;
 }
 </style>

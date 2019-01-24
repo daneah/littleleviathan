@@ -1,0 +1,24 @@
+:root {
+    --space-xxxs: 0.25em;
+    --space-xxs:  0.375em;
+    --space-xs:   0.5em;
+    --space-sm:   0.75em;
+    --space-md:   1.25em;
+    --space-lg:   2em;
+    --space-xl:   3.25em;
+    --space-xxl:  5.25em;
+    --space-xxxl: 8.5em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* + * {
+  margin-top: 1rem;
+}
+
+body {
+  padding: 1rem 5rem 5rem 5rem;
+}
