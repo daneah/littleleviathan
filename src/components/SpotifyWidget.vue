@@ -1,6 +1,6 @@
 <template>
   <iframe
-    :src="`https://open.spotify.com/follow/1/?uri=spotify:artist:${artistId}&size=basic&theme=light&show-count=${showFollowerCount}`"
+    :src="`https://open.spotify.com/follow/1/?uri=spotify:artist:${artistId}&size=basic&theme=light&show-count=0`"
     width="93"
     height="25"
     scrolling="no"
@@ -17,10 +17,6 @@ export default {
     artistId: {
       type: String,
       required: true,
-    },
-    showFollowerCount: {
-      type: Boolean,
-      default: false,
     },
   },
 };

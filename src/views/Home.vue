@@ -47,6 +47,7 @@ export default {
   display: block;
   margin: 5rem auto;
   animation: wobble 2s ease-in-out infinite alternate;
+  max-width: 100%;
 }
 
 @keyframes wobble {

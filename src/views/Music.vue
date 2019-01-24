@@ -101,7 +101,11 @@ main {
 .album {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 5rem;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .album__metadata {
@@ -112,6 +116,14 @@ main {
 
   h2 {
     text-align: right;
+  }
+
+  @media (max-width: 700px) {
+    align-items: center;
+
+    h2 {
+      text-align: center;
+    }
   }
 }
 
@@ -131,7 +143,7 @@ main {
 }
 
 .cover-image {
-  max-width: 400px;
+  max-width: 100%;
   margin: 0 auto;
 }
 </style>
