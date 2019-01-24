@@ -58,9 +58,6 @@ export default {
       albums: state => state.albums,
     }),
   },
-  mounted() {
-    console.log(this.albums);
-  },
   metaInfo: {
     title: 'Music',
     meta: [
