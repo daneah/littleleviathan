@@ -7,6 +7,11 @@
         v-for="album in albums"
         :key="album.title"
       >
+        <img
+          class="cover-image"
+          :src="`/img/${album.coverImage}`"
+          alt=""
+        >
         <div class="album__metadata">
           <h2>{{ album.title }}</h2>
           <p class="album__description">
@@ -35,11 +40,6 @@
             </li>
           </ul>
         </div>
-        <img
-          class="cover-image"
-          :src="`/img/${album.coverImage}`"
-          alt=""
-        >
       </li>
     </ul>
   </main>
@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
+h1 {
   text-align: center;
 }
 
@@ -108,20 +108,7 @@ main {
 .album__metadata {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: center;
-
-  h2 {
-    text-align: right;
-  }
-
-  @media (max-width: 700px) {
-    align-items: center;
-
-    h2 {
-      text-align: center;
-    }
-  }
 }
 
 .album__description {
@@ -134,8 +121,11 @@ main {
   margin-top: 0;
 
   li {
-    padding: var(--space-xs);
     display: inline-block;
+
+    + li {
+      margin-left: var(--space-md);
+    }
   }
 }
 
