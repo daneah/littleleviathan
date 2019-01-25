@@ -95,7 +95,7 @@ nav {
     li {
       display: inline-block;
       padding: 1rem;
-      font-size: var(--text-lg);
+      font-size: var(--text-xl);
       font-weight: 300;
     }
   }

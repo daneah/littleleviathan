@@ -10,7 +10,7 @@
 
     --text-color: var(--dark-gray);
 
-    --text-base-size: 0.9em;
+    --text-base-size: 0.75em;
     --text-scale-ratio: 1.618;
 
     --text-xs: calc(var(--text-sm) / var(--text-scale-ratio));
@@ -22,11 +22,11 @@
     --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
 
     @media (max-width: 1200px) {
-        --text-base-size: 0.85em;
+        --text-base-size: 0.7em;
     }
 
     @media (max-width: 480px) {
-        --text-base-size: 0.8em;
+        --text-base-size: 0.65em;
     }
 }
 
@@ -62,7 +62,7 @@ h4 {
 }
 
 p {
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
     line-height: var(--body-line-height);
     word-wrap: break-word;
     hyphens: auto;
