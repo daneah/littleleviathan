@@ -7,11 +7,12 @@
         v-for="album in albums"
         :key="album.title"
       >
-        <img
-          class="cover-image"
-          :src="`/img/${album.coverImage}`"
-          alt=""
-        >
+        <div class="cover-image">
+          <img
+            :src="`/img/${album.coverImage}`"
+            alt=""
+          >
+        </div>
         <div class="album__metadata">
           <h2>{{ album.title }}</h2>
           <p class="album__description">
@@ -19,23 +20,47 @@
           </p>
           <ul class="purchase-links">
             <li>
-              <a :href="`https://itunes.apple.com/album/${album.appleMusicLink}`">
-                Apple Music
+              <a
+                :href="`https://itunes.apple.com/album/${album.appleMusicLink}`"
+                title="Listen on Apple Music"
+              >
+                <FontAwesome
+                  icon="music"
+                  alt="Apple Music"
+                />
               </a>
             </li>
             <li>
-              <a :href="`https://soundcloud.com/littleleviathanmusic/sets/${album.soundcloudSet}`">
-                SoundCloud
+              <a
+                :href="`https://soundcloud.com/littleleviathanmusic/sets/${album.soundcloudSet}`"
+                title="Listen on SoundCloud"
+              >
+                <FontAwesome
+                  :icon="['fab', 'soundcloud']"
+                  alt="SoundCloud"
+                />
               </a>
             </li>
             <li>
-              <a :href="`https://littleleviathan.bandcamp.com/album/${album.bandcampId}`">
-                Bandcamp
+              <a
+                :href="`https://littleleviathan.bandcamp.com/album/${album.bandcampId}`"
+                title="Listen on Bandcamp"
+              >
+                <FontAwesome
+                  :icon="['fab', 'bandcamp']"
+                  alt="Bandcamp"
+                />
               </a>
             </li>
             <li>
-              <a :href="`https://open.spotify.com/album/${album.spotifyId}`">
-                Spotify
+              <a
+                :href="`https://open.spotify.com/album/${album.spotifyId}`"
+                title="Listen on Spotify"
+              >
+                <FontAwesome
+                  :icon="['fab', 'spotify']"
+                  alt="Spotify"
+                />
               </a>
             </li>
           </ul>
@@ -102,6 +127,7 @@ h1 {
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
+    grid-gap: 2rem;
   }
 }
 
@@ -118,19 +144,34 @@ h1 {
 
 .purchase-links {
   list-style: none;
-  margin-top: 0;
+  margin-left: -0.75rem;
+  font-size: var(--text-xl);
 
   li {
+    margin: 0;
     display: inline-block;
+  }
 
-    + li {
-      margin-left: var(--space-md);
+  a {
+    padding: .75rem;
+
+    svg {
+      transition: transform 0.25s cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    }
+
+    &:hover svg {
+      transform: scale(1.2);
     }
   }
 }
 
 .cover-image {
-  max-width: 100%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+  }
 }
 </style>
