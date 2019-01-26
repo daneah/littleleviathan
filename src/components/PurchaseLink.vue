@@ -38,7 +38,7 @@ a {
     transition: transform 0.25s cubic-bezier(0.68, -0.75, 0.265, 1.75);
   }
 
-  &:hover {
+  &:hover svg {
     transform: scale(1.2);
   }
 }
