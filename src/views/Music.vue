@@ -20,48 +20,32 @@
           </p>
           <ul class="purchase-links">
             <li>
-              <a
+              <PurchaseLink
+                icon="music"
                 :href="`https://itunes.apple.com/album/${album.appleMusicLink}`"
-                title="Listen on Apple Music"
-              >
-                <FontAwesome
-                  icon="music"
-                  alt="Apple Music"
-                />
-              </a>
+                service="Apple Music"
+              />
             </li>
             <li>
-              <a
+              <PurchaseLink
+                service="SoundCloud"
                 :href="`https://soundcloud.com/littleleviathanmusic/sets/${album.soundcloudSet}`"
-                title="Listen on SoundCloud"
-              >
-                <FontAwesome
-                  :icon="['fab', 'soundcloud']"
-                  alt="SoundCloud"
-                />
-              </a>
+                :icon="['fab', 'soundcloud']"
+              />
             </li>
             <li>
-              <a
+              <PurchaseLink
+                service="Bandcamp"
                 :href="`https://littleleviathan.bandcamp.com/album/${album.bandcampId}`"
-                title="Listen on Bandcamp"
-              >
-                <FontAwesome
-                  :icon="['fab', 'bandcamp']"
-                  alt="Bandcamp"
-                />
-              </a>
+                :icon="['fab', 'bandcamp']"
+              />
             </li>
             <li>
-              <a
+              <PurchaseLink
+                :icon="['fab', 'spotify']"
                 :href="`https://open.spotify.com/album/${album.spotifyId}`"
-                title="Listen on Spotify"
-              >
-                <FontAwesome
-                  :icon="['fab', 'spotify']"
-                  alt="Spotify"
-                />
-              </a>
+                service="Spotify"
+              />
             </li>
           </ul>
         </div>
@@ -73,11 +57,16 @@
 <script>
 import { mapState } from 'vuex';
 
+import PurchaseLink from '@/components/PurchaseLink.vue';
+
 const PAGE_TITLE = 'Music';
 const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.';
 
 export default {
   name: 'Music',
+  components: {
+    PurchaseLink,
+  },
   computed: {
     ...mapState({
       albums: state => state.albums,
@@ -150,18 +139,6 @@ h1 {
   li {
     margin: 0;
     display: inline-block;
-  }
-
-  a {
-    padding: .75rem;
-
-    svg {
-      transition: transform 0.25s cubic-bezier(0.68, -0.75, 0.265, 1.75);
-    }
-
-    &:hover svg {
-      transform: scale(1.2);
-    }
   }
 }
 
