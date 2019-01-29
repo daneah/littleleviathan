@@ -27,7 +27,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: 'https://littleleviathan.com',
+        content: 'https://littleleviathan.com/press',
         vmid: 'og:url',
       },
       {
