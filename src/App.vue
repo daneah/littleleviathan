@@ -26,7 +26,10 @@
         </li>
       </ul>
 
-      <SpotifyWidget artist-id="5rp7W2bKUyN8uB4KntE38x" />
+      <SpotifyWidget
+        artist-id="5rp7W2bKUyN8uB4KntE38x"
+        artist-name="Little Leviathan"
+      />
     </nav>
 
     <transition name="slide-down">
