@@ -121,9 +121,7 @@ h1 {
 }
 
 .album__metadata {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-self: center;
 }
 
 .album__description {
@@ -143,9 +141,8 @@ h1 {
 }
 
 .cover-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-self: center;
+  justify-self: end;
 
   img {
     max-width: 100%;
