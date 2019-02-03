@@ -1,6 +1,6 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils'
 
-import SpotifyWidget from '@/components/SpotifyWidget.vue';
+import SpotifyWidget from '@/components/SpotifyWidget.vue'
 
 
 describe('SpotifyWidget', () => {
@@ -10,10 +10,10 @@ describe('SpotifyWidget', () => {
         artistId: 'Little Leviathan',
         artistName: 'Little Leviathan'
       },
-    });
+    })
 
-    const iframe = wrapper.find('iframe');
-    //expect(iframe.attributes('src')).toBe('https://open.spotify.com/follow/1/?uri=spotify:artist:Little Leviathan&size=basic&theme=light&show-count=0');
-    //expect(iframe.attributes('title')).toBe('Follow Little Leviathan on Spotify');
-  });
+    const iframe = wrapper.find('iframe')
+    expect(iframe.attributes('src')).toBe('https://open.spotify.com/follow/1/?uri=spotify:artist:Little Leviathan&size=basic&theme=light&show-count=0')
+    expect(iframe.attributes('title')).toBe('Follow Little Leviathan on Spotify')
+  })
 })

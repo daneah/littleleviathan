@@ -12,8 +12,8 @@
 </template>
 
 <script>
-const PAGE_TITLE = 'Press';
-const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.';
+const PAGE_TITLE = 'Press'
+const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.'
 
 export default {
   name: 'Press',
@@ -42,7 +42,7 @@ export default {
       },
     ],
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

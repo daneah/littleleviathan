@@ -55,12 +55,12 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 
-import PurchaseLink from '@/components/PurchaseLink.vue';
+import PurchaseLink from '@/components/PurchaseLink.vue'
 
-const PAGE_TITLE = 'Music';
-const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.';
+const PAGE_TITLE = 'Music'
+const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.'
 
 export default {
   name: 'Music',
@@ -97,7 +97,7 @@ export default {
       },
     ],
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
