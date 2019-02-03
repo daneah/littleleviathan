@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import SpotifyWidget from '@/components/SpotifyWidget.vue'
+import SpotifyWidget from '@/components/SpotifyWidget'
 
 export default {
   name: 'App',
