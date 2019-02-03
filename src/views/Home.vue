@@ -9,8 +9,8 @@
 </template>
 
 <script>
-const PAGE_TITLE = 'Little Leviathan';
-const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.';
+const PAGE_TITLE = 'Little Leviathan'
+const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.'
 
 export default {
   name: 'Home',
@@ -39,7 +39,7 @@ export default {
       },
     ],
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

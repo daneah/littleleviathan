@@ -14,8 +14,8 @@
 </template>
 
 <script>
-const PAGE_TITLE = 'Page Not Found';
-const PAGE_DESCRIPTION = 'This page does not exist';
+const PAGE_TITLE = 'Page Not Found'
+const PAGE_DESCRIPTION = 'This page does not exist'
 
 export default {
   name: 'NotFound',
@@ -44,7 +44,7 @@ export default {
       },
     ],
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

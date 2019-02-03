@@ -1,22 +1,22 @@
-import Vue from 'vue';
-import VueAnalytics from 'vue-analytics';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMusic } from '@fortawesome/free-solid-svg-icons';
+import Vue from 'vue'
+import VueAnalytics from 'vue-analytics'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faMusic } from '@fortawesome/free-solid-svg-icons'
 import {
   faBandcamp,
   faSoundcloud,
   faSpotify,
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import App from './App.vue';
-import router from './router';
-import store from './store';
-import './registerServiceWorker';
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import './registerServiceWorker'
 
 // FontAwesome
-library.add(faBandcamp, faMusic, faSoundcloud, faSpotify);
-Vue.component('FontAwesome', FontAwesomeIcon);
+library.add(faBandcamp, faMusic, faSoundcloud, faSpotify)
+Vue.component('FontAwesome', FontAwesomeIcon)
 
 // Google Analytics
 Vue.use(VueAnalytics, {
@@ -26,13 +26,13 @@ Vue.use(VueAnalytics, {
     enabled: process.env.NODE_ENV !== 'production',
     sendHitTask: process.env.NODE_ENV === 'production',
   },
-});
+})
 
 // Main setup
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
   render: h => h(App),
-}).$mount('#app');
+}).$mount('#app')

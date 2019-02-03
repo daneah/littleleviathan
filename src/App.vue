@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import SpotifyWidget from '@/components/SpotifyWidget.vue';
+import SpotifyWidget from '@/components/SpotifyWidget.vue'
 
 export default {
   name: 'App',
@@ -67,9 +67,9 @@ export default {
           vmid: 'og:description',
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="scss">

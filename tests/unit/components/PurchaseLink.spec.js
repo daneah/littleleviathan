@@ -1,10 +1,10 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils'
 
-import PurchaseLink from '@/components/PurchaseLink.vue';
+import PurchaseLink from '@/components/PurchaseLink.vue'
 
 
 describe('PurchaseLink', () => {
-  let wrapper;
+  let wrapper
 
   beforeEach(() => {
     wrapper = shallowMount(PurchaseLink, {
@@ -16,17 +16,17 @@ describe('PurchaseLink', () => {
       stubs: {
         FontAwesome: '<div class="fa-stub"></div>',
       },
-    });
-  });
+    })
+  })
 
   it('Renders a link', () => {
-    expect(wrapper.isVueInstance()).toBe(true);
-    expect(wrapper.is('a')).toBe(true);
-  });
+    expect(wrapper.isVueInstance()).toBe(true)
+    expect(wrapper.is('a')).toBe(true)
+  })
 
   it('Uses the passed in props', () => {
-    expect(wrapper.find('a').attributes('href')).toBe('https://link.biz');
-    expect(wrapper.find('a').attributes('title')).toBe('Listen on Musix');
-    expect(wrapper.find('.fa-stub').attributes('icon')).toBe('the-icon');
-  });
-});
+    expect(wrapper.find('a').attributes('href')).toBe('https://link.biz')
+    expect(wrapper.find('a').attributes('title')).toBe('Listen on Musix')
+    expect(wrapper.find('.fa-stub').attributes('icon')).toBe('the-icon')
+  })
+})

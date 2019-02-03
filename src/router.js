@@ -1,10 +1,10 @@
-import Vue from 'vue';
-import Meta from 'vue-meta';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Vue from 'vue'
+import Meta from 'vue-meta'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
 
-Vue.use(Router);
-Vue.use(Meta);
+Vue.use(Router)
+Vue.use(Meta)
 
 export default new Router({
   mode: 'history',
@@ -36,4 +36,4 @@ export default new Router({
       component: () => import(/* webpackChunkName: 'notfound' */ './views/NotFound.vue'),
     },
   ],
-});
+})
