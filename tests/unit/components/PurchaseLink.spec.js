@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 
-import PurchaseLink from '@/components/PurchaseLink.vue'
+import PurchaseLink from '@/components/PurchaseLink'
 
 
 describe('PurchaseLink', () => {

@@ -57,7 +57,7 @@
 <script>
 import { mapState } from 'vuex'
 
-import PurchaseLink from '@/components/PurchaseLink.vue'
+import PurchaseLink from '@/components/PurchaseLink'
 
 const PAGE_TITLE = 'Music'
 const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.'

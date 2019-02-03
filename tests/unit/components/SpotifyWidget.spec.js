@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 
-import SpotifyWidget from '@/components/SpotifyWidget.vue'
+import SpotifyWidget from '@/components/SpotifyWidget'
 
 
 describe('SpotifyWidget', () => {
