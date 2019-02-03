@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Meta from 'vue-meta'
 import Router from 'vue-router'
-import Home from './views/Home'
+import Home from '@/views/Home'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -18,22 +18,22 @@ export default new Router({
     {
       path: '/press',
       name: 'press',
-      component: () => import(/* webpackChunkName: 'press' */ './views/Press'),
+      component: () => import(/* webpackChunkName: 'press' */ '@/views/Press'),
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import(/* webpackChunkName: 'press' */ './views/About'),
+      component: () => import(/* webpackChunkName: 'press' */ '@/views/About'),
     },
     {
       path: '/music',
       name: 'music',
-      component: () => import(/* webpackChunkName: 'press' */ './views/Music'),
+      component: () => import(/* webpackChunkName: 'press' */ '@/views/Music'),
     },
     {
       path: '*',
       name: 'notfound',
-      component: () => import(/* webpackChunkName: 'notfound' */ './views/NotFound'),
+      component: () => import(/* webpackChunkName: 'notfound' */ '@/views/NotFound'),
     },
   ],
 })

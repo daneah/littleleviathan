@@ -9,10 +9,10 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import App from './App'
-import router from './router'
-import store from './store'
-import './registerServiceWorker'
+import App from '@/App'
+import router from '@/router'
+import store from '@/store'
+import '@/registerServiceWorker'
 
 // FontAwesome
 library.add(faBandcamp, faMusic, faSoundcloud, faSpotify)
