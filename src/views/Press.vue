@@ -36,7 +36,7 @@ export default {
         vmid: 'description',
       },
       {
-        name: 'og:description',
+        property: 'og:description',
         content: PAGE_DESCRIPTION,
         vmid: 'og:description',
       },
