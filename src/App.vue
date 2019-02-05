@@ -58,13 +58,18 @@ export default {
         },
         {
           property: 'og:url',
-          content: 'GIVE ME A URL',
+          content: `https://littleleviathan.com${location.pathname}`,
           vmid: 'og:url',
         },
         {
           property: 'description',
           content: 'GIVE ME A DESCRIPTION',
           vmid: 'og:description',
+        },
+        {
+          property: 'og:image',
+          content: 'https://littleleviathan.com/img/whale.png',
+          vmid: 'og:image',
         },
       ],
     }

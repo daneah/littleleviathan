@@ -37,11 +37,6 @@ export default {
         content: `${PAGE_TITLE} | Little Leviathan`,
         vmid: 'og:title',
       },
-      {
-        property: 'og:url',
-        content: window.location.href,
-        vmid: 'og:url',
-      },
     ],
   },
 }

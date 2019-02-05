@@ -3,6 +3,7 @@ const PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 const productionPlugins = [
   new PrerenderSpaPlugin({
+    renderAfterTime: 5000,
     staticDir: path.join(__dirname, 'dist'),
     routes: [
         '/',

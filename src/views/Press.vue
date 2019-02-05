@@ -26,11 +26,6 @@ export default {
         vmid: 'og:title',
       },
       {
-        property: 'og:url',
-        content: 'https://littleleviathan.com/press',
-        vmid: 'og:url',
-      },
-      {
         name: 'description',
         content: PAGE_DESCRIPTION,
         vmid: 'description',
