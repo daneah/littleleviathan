@@ -1,84 +1,71 @@
+<script setup lang="ts">
+import { RouterLink, RouterView, useRoute } from 'vue-router'
+import { useHead } from '@unhead/vue'
+import wordmark from './assets/little-leviathan-wordmark.png'
+import whale from './assets/whale.png'
+
+const route = useRoute()
+const PAGE_DESCRIPTION = 'Little Leviathan | News, tour, info, music, photos, videos, and more.'
+
+useHead({
+  titleTemplate: '%s | Little Leviathan',
+  link: [
+    {
+      rel: 'canonical',
+      href: () => `https://littleleviathan${route.fullPath}`
+    }
+  ],
+  meta: [
+    {
+      name: 'description',
+      content: PAGE_DESCRIPTION
+    },
+    {
+      property: 'og:description',
+      content: PAGE_DESCRIPTION
+    },
+    {
+      property: 'og:url',
+      content: () => `https://littleleviathan.com${route.fullPath}${route.fullPath ? '/' : ''}`
+    },
+    {
+      property: 'og:image',
+      content: whale
+    }
+  ]
+})
+</script>
+
 <template>
-  <div id="app">
+  <div>
     <nav>
-      <router-link to="/">
-        <img
-          src="/img/little-leviathan-wordmark.png"
-          alt="Little Leviathan"
-        >
-      </router-link>
+      <RouterLink to="/">
+        <img :src="wordmark" alt="Little Leviathan" />
+      </RouterLink>
 
       <ul>
         <li>
-          <router-link to="/music">
-            Music
-          </router-link>
+          <RouterLink to="/music"> Music </RouterLink>
         </li>
         <li>
-          <router-link to="/about">
-            About
-          </router-link>
+          <RouterLink to="/about"> About </RouterLink>
         </li>
         <li>
-          <router-link to="/press">
-            Press
-          </router-link>
+          <RouterLink to="/press"> Press </RouterLink>
         </li>
       </ul>
-
-      <SpotifyWidget
-        artist-id="5rp7W2bKUyN8uB4KntE38x"
-        artist-name="Little Leviathan"
-      />
     </nav>
 
-    <transition name="slide-down">
-      <router-view />
-    </transition>
+    <RouterView v-slot="{ Component }">
+      <Transition name="slide-down">
+        <component :is="Component" />
+      </Transition>
+    </RouterView>
   </div>
 </template>
 
-<script>
-import SpotifyWidget from '@/components/SpotifyWidget'
-
-export default {
-  name: 'App',
-  components: {
-    SpotifyWidget,
-  },
-  metaInfo() {
-    return {
-      title: 'GIVE ME A TITLE',
-      titleTemplate: chunk => `${chunk} | Little Leviathan`,
-      meta: [
-        {
-          property: 'og:title',
-          content: 'GIVE ME A TITLE',
-          vmid: 'og:title',
-        },
-        {
-          property: 'og:url',
-          content: `https://littleleviathan.com${location.pathname}`,
-          vmid: 'og:url',
-        },
-        {
-          property: 'description',
-          content: 'GIVE ME A DESCRIPTION',
-          vmid: 'og:description',
-        },
-        {
-          property: 'og:image',
-          content: 'https://littleleviathan.com/img/whale.png',
-          vmid: 'og:image',
-        },
-      ],
-    }
-  },
-}
-</script>
-
 <style lang="scss">
-@import '@/main.scss';
+@import './assets/main.scss';
 
 body {
   background-color: var(--light-blue);
@@ -116,12 +103,16 @@ nav {
 }
 
 .slide-down-enter-active {
-  transition: opacity 0.5s, transform 0.5s;
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
 }
 
 .slide-down-enter,
-.slide-down-leave-to {
-  opacity: 0;
-  transform: translateY(50px);
+.slide-down-enter-to {
+  opacity: 1;
+  transform: translateY(0px);
 }
 </style>
