@@ -32,5 +32,5 @@ yarn format
 
 ### Run your unit tests
 ```
-npm run test:unit
+yarn test:unit
 ```
