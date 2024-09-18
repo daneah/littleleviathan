@@ -3119,6 +3119,7 @@ __metadata:
     prettier: ^3.0.0
     sass: ^1.65.1
     typescript: ~5.1.6
+    vite: ^4.5.5
     vitest: ^0.33.0
     vue: ^3.3.4
     vue-fontawesome: ^0.0.2
@@ -4919,7 +4920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^3.0.0 || ^4.0.0":
+"vite@npm:^3.0.0 || ^4.0.0, vite@npm:^4.5.5":
   version: 4.5.5
   resolution: "vite@npm:4.5.5"
   dependencies:
