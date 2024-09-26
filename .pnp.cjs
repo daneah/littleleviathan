@@ -4897,10 +4897,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["rollup", [\
-        ["npm:3.28.0", {\
-          "packageLocation": "./.yarn/cache/rollup-npm-3.28.0-4ab1b4022e-6ded4a0d3c.zip/node_modules/rollup/",\
+        ["npm:3.29.5", {\
+          "packageLocation": "./.yarn/cache/rollup-npm-3.29.5-4622371c71-6f8304e58a.zip/node_modules/rollup/",\
           "packageDependencies": [\
-            ["rollup", "npm:3.28.0"],\
+            ["rollup", "npm:3.29.5"],\
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"]\
           ],\
           "linkType": "HARD"\
@@ -5810,7 +5810,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["less", null],\
             ["lightningcss", null],\
             ["postcss", "npm:8.4.38"],\
-            ["rollup", "npm:3.28.0"],\
+            ["rollup", "npm:3.29.5"],\
             ["sass", null],\
             ["stylus", null],\
             ["sugarss", null],\
@@ -5849,7 +5849,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["less", null],\
             ["lightningcss", null],\
             ["postcss", "npm:8.4.38"],\
-            ["rollup", "npm:3.28.0"],\
+            ["rollup", "npm:3.29.5"],\
             ["sass", "npm:1.65.1"],\
             ["stylus", null],\
             ["sugarss", null],\
@@ -5888,7 +5888,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["less", null],\
             ["lightningcss", null],\
             ["postcss", "npm:8.4.38"],\
-            ["rollup", "npm:3.28.0"],\
+            ["rollup", "npm:3.29.5"],\
             ["sass", null],\
             ["stylus", null],\
             ["sugarss", null],\
