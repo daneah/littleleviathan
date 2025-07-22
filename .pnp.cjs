@@ -52,7 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:3.0.1"],\
             ["sass", "npm:1.65.1"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
-            ["vite", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.9"],\
+            ["vite", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.14"],\
             ["vitest", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:0.33.0"],\
             ["vue", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:3.5.12"],\
             ["vue-fontawesome", "npm:0.0.2"],\
@@ -984,7 +984,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-vue", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.2.3"],\
             ["@types/vite", null],\
             ["@types/vue", null],\
-            ["vite", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.9"],\
+            ["vite", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.14"],\
             ["vue", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:3.5.12"]\
           ],\
           "packagePeers": [\
@@ -3904,7 +3904,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:3.0.1"],\
             ["sass", "npm:1.65.1"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
-            ["vite", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.9"],\
+            ["vite", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.14"],\
             ["vitest", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:0.33.0"],\
             ["vue", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:3.5.12"],\
             ["vue-fontawesome", "npm:0.0.2"],\
@@ -5897,17 +5897,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["vite", [\
+        ["npm:4.5.14", {\
+          "packageLocation": "./.yarn/cache/vite-npm-4.5.14-e7160a8deb-ed61e2bc28.zip/node_modules/vite/",\
+          "packageDependencies": [\
+            ["vite", "npm:4.5.14"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["npm:4.5.5", {\
           "packageLocation": "./.yarn/cache/vite-npm-4.5.5-0c1705ba53-300c5f39c8.zip/node_modules/vite/",\
           "packageDependencies": [\
             ["vite", "npm:4.5.5"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["npm:4.5.9", {\
-          "packageLocation": "./.yarn/cache/vite-npm-4.5.9-7be7fb60da-ebe21bd4aa.zip/node_modules/vite/",\
-          "packageDependencies": [\
-            ["vite", "npm:4.5.9"]\
           ],\
           "linkType": "SOFT"\
         }],\
@@ -5950,10 +5950,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.9", {\
-          "packageLocation": "./.yarn/__virtual__/vite-virtual-a965b48aaa/0/cache/vite-npm-4.5.9-7be7fb60da-ebe21bd4aa.zip/node_modules/vite/",\
+        ["virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.14", {\
+          "packageLocation": "./.yarn/__virtual__/vite-virtual-ef5f6c60f5/0/cache/vite-npm-4.5.14-e7160a8deb-ed61e2bc28.zip/node_modules/vite/",\
           "packageDependencies": [\
-            ["vite", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.9"],\
+            ["vite", "virtual:7a75d10043d834b64a18b9ef2c2bbfea32e74468d77ea684610920ef82b195838e5eca2dba2fef1e6238dd2a9c5958679e3b80327b749e873f9cffeb51b1c179#npm:4.5.14"],\
             ["@types/less", null],\
             ["@types/lightningcss", null],\
             ["@types/node", "npm:18.17.5"],\
