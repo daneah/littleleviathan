@@ -3766,10 +3766,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["immutable", [\
-        ["npm:4.3.2", {\
-          "packageLocation": "./.yarn/cache/immutable-npm-4.3.2-413e7ca19b-bb1d0f3eb8.zip/node_modules/immutable/",\
+        ["npm:4.3.8", {\
+          "packageLocation": "./.yarn/cache/immutable-npm-4.3.8-9db2d34fb7-cd527802c8.zip/node_modules/immutable/",\
           "packageDependencies": [\
-            ["immutable", "npm:4.3.2"]\
+            ["immutable", "npm:4.3.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5556,7 +5556,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["sass", "npm:1.65.1"],\
             ["chokidar", "npm:3.5.3"],\
-            ["immutable", "npm:4.3.2"],\
+            ["immutable", "npm:4.3.8"],\
             ["source-map-js", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
