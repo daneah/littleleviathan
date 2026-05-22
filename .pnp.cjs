@@ -1539,7 +1539,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@vue/compiler-sfc", "npm:2.7.14"],\
             ["@babel/parser", "npm:7.26.0"],\
-            ["postcss", "npm:8.4.47"],\
+            ["postcss", "npm:8.5.15"],\
             ["source-map", "npm:0.6.1"]\
           ],\
           "linkType": "HARD"\
@@ -1555,7 +1555,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vue/shared", "npm:3.5.12"],\
             ["estree-walker", "npm:2.0.2"],\
             ["magic-string", "npm:0.30.12"],\
-            ["postcss", "npm:8.4.47"],\
+            ["postcss", "npm:8.5.15"],\
             ["source-map-js", "npm:1.2.1"]\
           ],\
           "linkType": "HARD"\
@@ -4772,17 +4772,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["nanoid", [\
-        ["npm:3.3.11", {\
-          "packageLocation": "./.yarn/cache/nanoid-npm-3.3.11-f98c1f9ef6-3be20d8866.zip/node_modules/nanoid/",\
+        ["npm:3.3.12", {\
+          "packageLocation": "./.yarn/cache/nanoid-npm-3.3.12-41f8e0bb94-3869925744.zip/node_modules/nanoid/",\
           "packageDependencies": [\
-            ["nanoid", "npm:3.3.11"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:3.3.8", {\
-          "packageLocation": "./.yarn/cache/nanoid-npm-3.3.8-d22226208b-dfe0adbc0c.zip/node_modules/nanoid/",\
-          "packageDependencies": [\
-            ["nanoid", "npm:3.3.8"]\
+            ["nanoid", "npm:3.3.12"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5292,21 +5285,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["postcss", [\
-        ["npm:8.4.47", {\
-          "packageLocation": "./.yarn/cache/postcss-npm-8.4.47-2f4d4be1fa-f78440a9d8.zip/node_modules/postcss/",\
+        ["npm:8.5.15", {\
+          "packageLocation": "./.yarn/cache/postcss-npm-8.5.15-8e6eef9b78-82e046d5bd.zip/node_modules/postcss/",\
           "packageDependencies": [\
-            ["postcss", "npm:8.4.47"],\
-            ["nanoid", "npm:3.3.8"],\
-            ["picocolors", "npm:1.1.1"],\
-            ["source-map-js", "npm:1.2.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:8.5.9", {\
-          "packageLocation": "./.yarn/cache/postcss-npm-8.5.9-0b69075ff7-0dcaa32d93.zip/node_modules/postcss/",\
-          "packageDependencies": [\
-            ["postcss", "npm:8.5.9"],\
-            ["nanoid", "npm:3.3.11"],\
+            ["postcss", "npm:8.5.15"],\
+            ["nanoid", "npm:3.3.12"],\
             ["picocolors", "npm:1.1.1"],\
             ["source-map-js", "npm:1.2.1"]\
           ],\
@@ -6482,7 +6465,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"],\
             ["less", null],\
             ["lightningcss", null],\
-            ["postcss", "npm:8.4.47"],\
+            ["postcss", "npm:8.5.15"],\
             ["rollup", "npm:3.30.0"],\
             ["sass", null],\
             ["stylus", null],\
@@ -6528,7 +6511,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["less", null],\
             ["lightningcss", null],\
             ["picomatch", "npm:4.0.4"],\
-            ["postcss", "npm:8.5.9"],\
+            ["postcss", "npm:8.5.15"],\
             ["rollup", "npm:4.60.1"],\
             ["sass", "npm:1.65.1"],\
             ["sass-embedded", null],\
@@ -6579,7 +6562,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"],\
             ["less", null],\
             ["lightningcss", null],\
-            ["postcss", "npm:8.4.47"],\
+            ["postcss", "npm:8.5.15"],\
             ["rollup", "npm:3.30.0"],\
             ["sass", null],\
             ["stylus", null],\
