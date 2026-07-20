@@ -4888,7 +4888,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["minimatch", "npm:3.1.2"],\
             ["pidtree", "npm:0.3.1"],\
             ["read-pkg", "npm:3.0.0"],\
-            ["shell-quote", "npm:1.8.4"],\
+            ["shell-quote", "npm:1.10.0"],\
             ["string.prototype.padend", "npm:3.1.4"]\
           ],\
           "linkType": "HARD"\
@@ -5723,10 +5723,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["shell-quote", [\
-        ["npm:1.8.4", {\
-          "packageLocation": "./.yarn/cache/shell-quote-npm-1.8.4-13eacaabff-082dc836ba.zip/node_modules/shell-quote/",\
+        ["npm:1.10.0", {\
+          "packageLocation": "./.yarn/cache/shell-quote-npm-1.10.0-8aabc0056e-d4bc0757ae.zip/node_modules/shell-quote/",\
           "packageDependencies": [\
-            ["shell-quote", "npm:1.8.4"]\
+            ["shell-quote", "npm:1.10.0"]\
           ],\
           "linkType": "HARD"\
         }]\
