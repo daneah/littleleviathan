@@ -1517,7 +1517,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vue/shared", "npm:3.5.12"],\
             ["entities", "npm:4.5.0"],\
             ["estree-walker", "npm:2.0.2"],\
-            ["source-map-js", "npm:1.2.1"]\
+            ["source-map-js", "npm:1.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1556,7 +1556,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["estree-walker", "npm:2.0.2"],\
             ["magic-string", "npm:0.30.12"],\
             ["postcss", "npm:8.5.23"],\
-            ["source-map-js", "npm:1.2.1"]\
+            ["source-map-js", "npm:1.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5299,7 +5299,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.5.23"],\
             ["nanoid", "npm:3.3.18"],\
             ["picocolors", "npm:1.1.1"],\
-            ["source-map-js", "npm:1.2.1"]\
+            ["source-map-js", "npm:1.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5647,7 +5647,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sass", "npm:1.65.1"],\
             ["chokidar", "npm:3.5.3"],\
             ["immutable", "npm:4.3.9"],\
-            ["source-map-js", "npm:1.2.1"]\
+            ["source-map-js", "npm:1.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5819,10 +5819,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["source-map-js", [\
-        ["npm:1.2.1", {\
-          "packageLocation": "./.yarn/cache/source-map-js-npm-1.2.1-b9a47d7e1a-4eb0cd997c.zip/node_modules/source-map-js/",\
+        ["npm:1.2.2", {\
+          "packageLocation": "./.yarn/cache/source-map-js-npm-1.2.2-d40ce9a415-d4f3adc192.zip/node_modules/source-map-js/",\
           "packageDependencies": [\
-            ["source-map-js", "npm:1.2.1"]\
+            ["source-map-js", "npm:1.2.2"]\
           ],\
           "linkType": "HARD"\
         }]\
