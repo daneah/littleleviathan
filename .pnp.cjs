@@ -3008,7 +3008,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.47.0"],\
             ["natural-compare", "npm:1.4.0"],\
             ["nth-check", "npm:2.1.1"],\
-            ["postcss-selector-parser", "npm:6.0.13"],\
+            ["postcss-selector-parser", "npm:6.1.5"],\
             ["semver", "npm:7.5.4"],\
             ["vue-eslint-parser", "virtual:a33de4d57f08b2d373d9b8a64a402d141faa425f1698a0f7871fee66ef09927953226e48a9a51d9cd4b337f35e0321e5c38effc8695ca5459e174bb83691133d#npm:9.3.1"],\
             ["xml-name-validator", "npm:4.0.0"]\
@@ -5305,10 +5305,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["postcss-selector-parser", [\
-        ["npm:6.0.13", {\
-          "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.0.13-f732d92326-f89163338a.zip/node_modules/postcss-selector-parser/",\
+        ["npm:6.1.5", {\
+          "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.1.5-7a81aa8b56-48092b9e8d.zip/node_modules/postcss-selector-parser/",\
           "packageDependencies": [\
-            ["postcss-selector-parser", "npm:6.0.13"],\
+            ["postcss-selector-parser", "npm:6.1.5"],\
             ["cssesc", "npm:3.0.0"],\
             ["util-deprecate", "npm:1.0.2"]\
           ],\
